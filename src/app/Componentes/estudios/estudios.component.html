@@ -3,9 +3,10 @@
     <article>
       <h5 class="titulo">Formación académica</h5>
       <ul>
-        <li>Certificación Diseño web responsivo- FreeCodeCamp. </li>
-        <li>Programador Full Stack Jr: certificado por la Camara Argentina de la Industria del Software y el Ministerio de Desarrollo Productivo.</li>
-        <li>Ingles Fluido: Laboratorio de Idiomas de la UNMDP- Cursada completa.</li>
+        <li *ngFor="let educacion of educacionLista">
+          <p>{{educacion}}</p>
+        </li>
+        
       </ul>
       <div class="lapiz" id="lapizAcademica"><i class="fa-solid fa-pen-to-square"></i></div>
     </article>
