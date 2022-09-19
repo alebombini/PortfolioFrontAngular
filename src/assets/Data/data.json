@@ -1,0 +1,49 @@
+{
+	"name": "Alejandra Bombini",
+	"position": "Full Stack Developer Trainee ",
+    "localidad": "Mar del Plata",
+    "fecha de Nacimiento": "05/10/79",
+
+    "fotoPersonal": "assets/images/morita_y_yox1.jpg",
+    "fotoEstudios": "assets/images/libro_iloveargx1.heic",
+    "fotoExperiencia": "assets/images/milkachips.png",
+    "fotoSkills": "assets/images/Soft-Skillsx1.png",
+    "fotoProyectos":"assets/images/oficina-en-la-playax1.jpg",
+
+	"educacion": ["Certificación Diseño web responsivo- FreeCodeCamp.",
+		"Programador Full Stack Jr: certificado por la Camara Argentina de la Industria del Software y el Ministerio de Desarrollo Productivo.",
+		"Ingles Fluido: Laboratorio de Idiomas de la UNMDP- Cursada completa."],
+        
+        "logo": "./assets/images/Mondelez-Internacional-Linea-Futuro.jpg ",
+
+    "experiencia": [
+        {       
+               
+                "anios": "Marzo 2022-Actual",
+                "empresa": "Mondelez Argentina",
+                "cargo": "Representante de Visibilidad TT",
+                "responsabilidades": 
+                 ["Negociacion de exhibiciones y promociones en puntos de venta estratégicos. ",
+                 "Coaching de merchandisers Distribuidores.",
+                 "Coordinacion, implementacion y presentacion de resultados de acciones de marketing."]
+            },
+            {
+                "anios": "2017-Febrero 2022",
+                "cargo": "Analista de mercado TT",
+                "empresa": "Mondelez Argentina",
+                "responsabilidades": 
+                 ["Coaching fuerza de ventas de preventistas de 7 distribuidores ",
+                 " gestion y desarrollo de negocios, nuevos clientes ",
+                 " auditorias de mercado: analisis de la gestion de los 7 distribuidores a cargo, detección de oporunidades, armado de informe y presentación de los resultados, gestión de planes de acción, y seguimiento."]
+            },
+            {    
+                "anios": "2005-2017",
+                "cargo": "Promotora de Ventas",
+                "empresa": "Mondelez Argentina",
+                "responsabilidades": 
+                 ["Negociación de exhibiciones en principales puntos de venta.",
+                 " control y mantenimiento de exhibiciones pautasas",
+                 " ejecucion de acciones de Marketing en Puntos de venta"]						   
+        }]
+}
+
