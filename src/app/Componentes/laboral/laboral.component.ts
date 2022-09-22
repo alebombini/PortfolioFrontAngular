@@ -9,6 +9,7 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
 export class LaboralComponent implements OnInit {
   experienciaLista: any;
   datosGrales: any;
+  responsabilidades: any;
   constructor(private datosPortfolio: PortofolioService) { }
 
   ngOnInit(): void {

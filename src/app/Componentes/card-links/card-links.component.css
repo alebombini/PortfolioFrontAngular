@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+}
+.figure-caption {
+    color: antiquewhite;
+    text-align: center;
+
+}
+figure:hover {
+    border: solid white; 
+    
+  }

@@ -14,6 +14,7 @@ export class CardLinksComponent implements OnInit {
     this.datosPortfolio.obtenerDatos().subscribe(data => {
       console.log(data);
       this.miPortfolio= data;
+      
     });
   }
 

@@ -2,32 +2,19 @@ body {
     color: black;
     text-align: center;
     background-color:rgba(235, 237, 243, 0.95);
-  /*background-image: url(https://img.freepik.com/foto-gratis/confeti-estrella-brillante-sobre-fondo-acuarela-pastel-abstracto-colorido_53876-98173.jpg?w=2000);*/
     font-family: Arial, Helvetica, sans-serif ;
     
   }
-  a {
-    text-decoration: none;
-  }
-  figure:hover {
-    border: solid white; 
-    
-  }
-  
-  a.nav-link.active:hover {
-    background-color: rgba(95, 110, 157, 0.993);
-    
-  }
+
   .lapiz {
     display: none;
   }
   
   main {
-    position: relative;
-    width: 95%;
-    height: 610px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    background-color:rgba(235, 237, 243, 0.95);
   }
   #card {
   display: flex;
@@ -42,14 +29,8 @@ body {
   width: 90%;
   border-radius: 10px;
   }
-  .navbar.navbar-expand-lg.bg-success{
-  background-color:rgba(102, 111, 213, 0.772) !important;
   
-  } 
   
-  .collapse.navbar-collapse{    /*links navbar*/
-  margin-left: 70%;
-  }
   h1 {
   color: white;
   font-size: 30px;
@@ -58,18 +39,18 @@ body {
   padding: 10px;
   }
   
-  #titulo {
+  .titulo {
   padding: 10px;
-  background-color:rgba(17, 16, 16, 0.1);
+  background-color:rgba(12, 12, 12, 0.1);
   font-family: Impact, serif;
+  text-align: center;
   }  
   
-  h5 {
+  /*h5 {
   margin-top: 4%;
   color: rgb(255, 255, 255);
-  background-color: gray;
-  /*text-shadow: rgb(122, 122, 122) 4px 3px 0px;*/
-  } 
+  background-color: rgb(25, 22, 22);
+  } */
   
   h6 {
   font-weight: bold;
