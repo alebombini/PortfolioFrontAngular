@@ -10,6 +10,19 @@ export class PortofolioService {
   constructor(private http: HttpClient) { }
   
   obtenerDatos(): Observable<any>{
-    return this.http.get('./assets/Data/data.json');
+   return this.http.get('./assets/Data/data.json'); 
   }
+  obtenerDatosIngles(): Observable<any>{
+    return this.http.get('./assets/Data/data-ingles.json');
+  }
+  /*
+  if idioma = español{
+  return this.http.get('./assets/Data/data.json');
+  } else {
+    return this.http.get('./assets/Data/data-ingles.json'); 
+  }
+  */
+
+
+
 }

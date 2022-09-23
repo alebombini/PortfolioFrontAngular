@@ -1,14 +1,13 @@
-.navbar.navbar-expand-lg.bg-success{
-  background-color:rgba(102, 111, 213, 0.772) !important;
+.navbar.navbar-expand-sm.bg-success{
+  background-color:rgba(102, 111, 213, 0.772) !important;  
 } 
-
-.collapse.navbar-collapse{    /*links navbar*/
-  margin-left: 60%;  
-}                                    
 
 a.nav-link.active:hover, .btn.btn-secondary.btn-sm.dropdown-toggle:hover { 
   background-color: rgba(95, 110, 157, 0.993);
 }
-.btn.btn-secondary.btn-sm.dropdown-toggle {
+.btn.btn-secondary.btn-sm.dropdown-toggle {   /*boton idioma*/
   background-color:rgba(175, 181, 241, 0.772);
+  font-size: smaller !important;
+  
 }
+

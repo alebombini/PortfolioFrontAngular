@@ -1,0 +1,55 @@
+{
+	"name": "Alejandra Bombini",
+	"position": "Full Stack Developer Trainee ",
+    "localidad": "Mar del Plata",
+    "fecha de Nacimiento": "05/10/79",
+
+    "fotoPersonal": "assets/images/morita_y_yox1.jpg",
+    "fotoEstudios": "assets/images/libro_iloveargx1.heic",
+    "fotoExperiencia": "assets/images/milkachips.png",
+    "fotoSkills": "assets/images/Soft-Skillsx1.png",
+    "fotoProyectos":"assets/images/oficina-en-la-playax1.jpg",
+    "titulo1":"About me",
+    "titulo2": "Education",
+    "titulo3" : "Experience",
+    "titulo4": "Skills",
+    "titulo5": "Proyects",
+
+
+	"educacion": ["Responsive Web Desing- FreeCodeCamp.",
+		"Full Stack Developer Jr: Certificate by the Argentinian Software Industry Chamber and the Productive Development Ministry.",
+		"English: Certificate by Languaje Lab of the National University of Mar del Plata"],
+        
+        "logo": "./assets/images/Mondelez-Internacional-Linea-Futuro.jpg ",
+
+    "experiencia": [
+        {       
+               
+                "anios": "March 2022-Current",
+                "empresa": "Mondelez Argentina",
+                "cargo": "Fiel Representative Traditional Trade",
+                "responsabilidades": 
+                 ["Negociation with estrategic clients.",
+                 "Coaching of merchandisers.",
+                 "Coordination, implementation y presentation of marketing plans results."]
+            },
+            {
+                "anios": "2017 to February 2022",
+                "cargo": "Field Analyst TT",
+                "empresa": "Mondelez Argentina",
+                "responsabilidades": 
+                 ["Coaching 7 distributors Sales Team.",
+                 "Business development, new clients.",
+                 "Market audit: mangement analysis of distributors, oportunity detection, report presentation, action plan management and monitoring."]
+            },
+            {    
+                "anios": "2005 to 2017",
+                "cargo": "Sales Promoter",
+                "empresa": "Mondelez Argentina",
+                "responsabilidades": 
+                 ["Control and maintenance of scheduled exhibits.",
+                 "Execution of marketing programs.",
+                "Display installation and maintenance."]						   
+        }]
+}
+

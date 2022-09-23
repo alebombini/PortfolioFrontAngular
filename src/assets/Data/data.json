@@ -11,7 +11,7 @@
     "fotoProyectos":"assets/images/oficina-en-la-playax1.jpg",
     "titulo1":"Sobre Mi",
     "titulo2": "Formación",
-    "titulo3" : "Expreriencia profesional",
+    "titulo3" : "Experiencia profesional",
     "titulo4": "Skills",
     "titulo5": "Proyectos",
 
@@ -29,7 +29,7 @@
                 "empresa": "Mondelez Argentina",
                 "cargo": "Representante de Visibilidad TT",
                 "responsabilidades": 
-                 ["Negociacion de exhibiciones y promociones en puntos de venta estratégicos.",
+                 ["Negociación de exhibiciones y promociones en puntos de venta estratégicos.",
                  "Coaching de merchandisers.",
                  "Coordinacion, implementacion y presentacion de resultados de acciones de marketing."]
             },

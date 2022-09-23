@@ -6,7 +6,7 @@ a {
     text-align: center;
 
 }
-figure:hover {
+.figure:hover {
     border: solid white; 
     
   }
