@@ -50,6 +50,15 @@
                  ["Control y mantenimiento de exhibiciones en puntos de venta.",
                  "Ejecución de acciones de Marketing.",
                 "Negociación de espacios de exhibición el cartera de clientes."]						   
-        }]
+        }],
+        "proyectos": [
+            {
+            "titulo": "Proyectos",
+            "proyecto1": "Pagina Tributo",
+            "proyecto2": "Formulario",
+            "proyecto3": "Doc. técnica",
+            "proyecto4": "Landin page"
+        }
+        ]
 }
 

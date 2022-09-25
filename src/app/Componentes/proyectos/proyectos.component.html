@@ -1,11 +1,35 @@
 <div class="info" id="proyectos">
     <!--seccion proyectos-->
-     <article><h5 class="titulo">Proyectos</h5>
-        <div class="d-flex flex-row mb-3" id="card">
-         <figure><img src="assets\images\proyectoFreeCodeCampTributo.PNG" class="img-thumbnail" alt="pagina tributo proyecto FreeCodeCamp"><figcaption class="figure-caption">Pagina tributo</figcaption></figure> 
-         <figure><img src="assets\images\formulario.PNG" class="img-thumbnail" alt="formulario proyecto FreeCodeCamp"><figcaption class="figure-caption">Formulario</figcaption></figure>
-         <figure><img src="assets\images\tecnica.png" class="img-thumbnail" alt="proyecto FreeCodeCamp"><figcaption class="figure-caption">Doc. Tecnica</figcaption></figure>
-         <figure><img src="assets\images\landingpagex1.png" class="img-thumbnail" alt="proyecto Landing Page"><figcaption class="figure-caption">Landing Page</figcaption></figure>
+     <article><h5 class="titulo">{{miPortfolio.titulo5}}</h5>
+        <div class="d-flex flex-row mb-3" id="card" *ngFor="let proyecto of proyectos">
+         
+         <figure class="link-proyectos">
+            <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page" target="_blank">
+               <img src="assets\images\proyectoFreeCodeCampTributo.PNG" class="img-thumbnail" alt="pagina tributo proyecto FreeCodeCamp">
+               <figcaption class="figure-caption">{{proyecto.proyecto1}}</figcaption>
+            </a>
+         </figure> 
+      
+         <figure class="link-proyectos">
+            <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form" target="_blank">
+               <img src="assets\images\formulario.PNG" class="img-thumbnail" alt="formulario proyecto FreeCodeCamp">
+               <figcaption class="figure-caption">{{proyecto.proyecto2}}</figcaption>
+            </a>
+         </figure>
+
+         <figure class="link-proyectos">
+            <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page" target="_blank">
+               <img src="assets\images\tecnica.png" class="img-thumbnail" alt="proyecto FreeCodeCamp">
+               <figcaption class="figure-caption">{{proyecto.proyecto3}}</figcaption>
+            </a>
+         </figure>
+         <figure class="link-proyectos">
+            <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page" target="_blank">
+               <img src="assets\images\landingpagex1.png" class="img-thumbnail" alt="proyecto Landing Page">
+               <figcaption class="figure-caption">{{proyecto.proyecto4}}</figcaption>
+            </a>
+         </figure>
+         
          <div class="lapiz" id="lapizProyectos"><i class="fa-solid fa-pen-to-square"></i></div>
         </div>
      </article>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortofolioService } from 'src/app/Servicios/portofolio.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
+  miPortfolio: any;
+  proyectos: any;
 
-  constructor() { }
+  constructor(private datosPortfolio: PortofolioService) { }
 
   ngOnInit(): void {
+    this.datosPortfolio.obtenerDatos().subscribe(data => {
+      this.miPortfolio = data;
+      this.proyectos = data.proyectos;
+    });
   }
 
 }

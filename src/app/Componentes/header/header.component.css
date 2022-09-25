@@ -10,4 +10,7 @@ a.nav-link.active:hover, .btn.btn-secondary.btn-sm.dropdown-toggle:hover {
   font-size: smaller !important;
   
 }
+.dropdown-item {
+  font-size: smaller;
+}
 

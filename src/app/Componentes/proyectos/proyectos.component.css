@@ -1,0 +1,11 @@
+.figure-caption{
+    color: antiquewhite;
+    text-align: center;
+}
+.linkFrecodecamp{
+    text-decoration: none;
+}
+.link-proyectos:hover {
+    border: solid white; 
+    
+  }
