@@ -1,0 +1,13 @@
+.flex-item {
+   line-height: 1.4;
+   font-weight: bold;
+   width: 150%;
+   margin-left: 15px;
+   padding: 10px;
+   background-color: white;
+}
+ul {
+    list-style: none;
+    margin-left: 13%;
+    
+}
