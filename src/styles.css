@@ -6,8 +6,9 @@ body {
     
   }
 
-  .lapiz {
-    display: none;
+  .btn.lapiz {
+    /*display: none;*/
+    display: block;
   }
   
   main {

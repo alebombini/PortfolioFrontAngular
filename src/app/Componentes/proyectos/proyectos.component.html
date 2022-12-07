@@ -7,7 +7,11 @@
             <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page" target="_blank">
                <img src="assets\images\proyectoFreeCodeCampTributo.PNG" class="img-thumbnail" alt="pagina tributo proyecto FreeCodeCamp">
                <figcaption class="figure-caption">{{proyecto.proyecto1}}</figcaption>
-            </a>
+            </a> 
+            <!--boton borrar-->
+           <div class="btn delete" type="button">
+              <i class="fa-solid fa-trash"></i>
+            </div>
          </figure> 
       
          <figure class="link-proyectos">
@@ -15,6 +19,10 @@
                <img src="assets\images\formulario.PNG" class="img-thumbnail" alt="formulario proyecto FreeCodeCamp">
                <figcaption class="figure-caption">{{proyecto.proyecto2}}</figcaption>
             </a>
+            <!--boton borrar-->
+          <div class="btn delete" type="button">
+               <i class="fa-solid fa-trash"></i>
+             </div>
          </figure>
 
          <figure class="link-proyectos">
@@ -22,15 +30,52 @@
                <img src="assets\images\tecnica.png" class="img-thumbnail" alt="proyecto FreeCodeCamp">
                <figcaption class="figure-caption">{{proyecto.proyecto3}}</figcaption>
             </a>
+            <!--boton borrar-->
+           <div class="btn delete" type="button">
+               <i class="fa-solid fa-trash"></i>
+             </div>
          </figure>
          <figure class="link-proyectos">
             <a class="linkFrecodecamp" href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page" target="_blank">
                <img src="assets\images\landingpagex1.png" class="img-thumbnail" alt="proyecto Landing Page">
                <figcaption class="figure-caption">{{proyecto.proyecto4}}</figcaption>
-            </a>
+            </a><!--boton borrar -->
+           <div class="btn delete" type="button">
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            
          </figure>
-         
-         <div class="lapiz" id="lapizProyectos"><i class="fa-solid fa-pen-to-square"></i></div>
+         <!--boton agregar proyecto-->
+         <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#agregarProyecto" >
+           <span style="color: whitesmoke;"> <i class="fa-solid fa-plus"></i></span>
+          </div>
+        
         </div>
      </article>
+    </div>
+
+    <div class="modal fade" id="agregarProyecto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar proyecto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input class="form-control form-control-sm" type="text" placeholder="Nombre proyecto" aria-label=".form-control-sm example">
+           <br>
+           <br>
+            <input class="form-control form-control-sm" type="text" placeholder="Proyecto -URL" aria-label=".form-control-sm example">
+            <br>
+           <br>
+            <input class="form-control form-control-sm" type="text" placeholder="Imagen- URL" aria-label=".form-control-sm example">
+           
+           
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
     </div>

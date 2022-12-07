@@ -1,6 +1,13 @@
 <div class="banner">
-    <h1 id="nombre">{{miPortfolio.name}}</h1>
-    <div class="cargo"> <h2>{{miPortfolio.position}}</h2> <div class="lapiz" id="lapizTitulo"><i class="fa-solid fa-pen-to-square"></i></div></div>
+    <h1 id="nombre">{{persona.nombre}}  {{persona.apellido}}</h1>
+    <div class="cargo"> <h2>{{persona.titulo}}</h2> 
+     
+      <!-- boton editar-->
+      <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#editBanner" >
+        <span style="color: whitesmoke;"> <i class="fa-solid fa-pen-to-square"></i></span>
+      </div>
+    </div>
     
   </div>
-  
+ 
+  <app-editarBanner></app-editarBanner>

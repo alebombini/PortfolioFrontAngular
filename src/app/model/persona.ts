@@ -1,5 +1,5 @@
-export class Persona {
-    id: number;
+export class persona {
+    id?: number;
     nombre: String;
     apellido: String;
     clave: String;
@@ -12,10 +12,10 @@ export class Persona {
     UrlLinkedIn: String;
 
 
-    constructor(id:number, nombre: String, apellido: String, clave: String, titulo: String,
+    constructor(nombre: String, apellido: String, clave: String, titulo: String,
         fechaNac: String, email: String, UrlGithub: String, whatsapp: String, UrlTelegram: String,
         UrlLinkedIn: String) {
-       this.id = id;
+      
        this.nombre = nombre;
        this.apellido = apellido;
        this.clave = clave;

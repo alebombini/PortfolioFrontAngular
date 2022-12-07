@@ -1,6 +1,6 @@
     <!-- Button trigger modal -->
     <div class="loginbt">
-    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
         <span style="background-color:whitesmoke;">
           <i class="fa-solid fa-user-lock fa-sm"></i>
         </span>
@@ -10,7 +10,8 @@
     <button type="button" class="btn btn-light fa-sm">Cerrar</button>
 </div>
 <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<form [formGroup]="form" class="m-5">
+      <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -21,21 +22,21 @@
               <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                  <input type="email" formControlName="email" class="form-control-plaintext" id="staticEmail" value="email@example.com">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label"> Contraseña: </label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputPassword">
+                  <input type="password" formControlName="password" class="form-control" id="inputPassword">
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-primary">Login</button>
             </div>
           </div>
         </div>
       </div>
-     
+    </form>
     

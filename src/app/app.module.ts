@@ -14,6 +14,8 @@ import { ProyectosComponent } from './Componentes/proyectos/proyectos.component'
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { PortofolioService } from './Servicios/portofolio.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditarComponent } from './Componentes/banner/editar/editar.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
         SkillsComponent,
         ProyectosComponent,
         FooterComponent,
+        EditarComponent,
       
     ],
     providers: [],
@@ -36,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        ReactiveFormsModule
         
     ]
 })
