@@ -1,22 +1,21 @@
 <div class="info" id="laboral">
     <!-- seccion experiencia laboral-->
      <article>
-       <h5 class="titulo"> {{miPortfolio.titulo3}}</h5>
+       <h5 class="titulo"> Experiencia Laboral</h5>
        <div>
         
         <ul>
-          <li *ngFor="let experiencia of experienciaLista">
-            <img class="logo" [src]="miPortfolio.logo">
-            <h6>{{experiencia.anios}}, {{experiencia.cargo}} - {{experiencia.empresa}}</h6>
+          <li *ngFor="let experiencia of experiencia">
+            <img class="logo" [src]="experiencia.logo">
+            <h6>{{experiencia.fin}}, {{experiencia.cargo}} - {{experiencia.empresa}}</h6>
             <div class="btn delete" type="button">
               <i class="fa-solid fa-trash"></i>
             </div>
             <ul>
-              <li>{{experiencia.responsabilidades[0]}}</li>
-              <li>{{experiencia.responsabilidades[1]}}</li>
-              <li>{{experiencia.responsabilidades[2]}}</li>
-            </ul>
-          </li>
+              <li>{{experiencia.descripcion}}</li>
+              
+           </ul>
+         
         </ul>
       </div>
             <!-- boton Modal --> 

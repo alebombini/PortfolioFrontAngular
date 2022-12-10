@@ -14,6 +14,10 @@ export class SkillsService {
   public traer():Observable<Skills[]>{
     return this.httpClient.get<Skills[]>(this.url + 'traer');
   }
+  public detail(id:number):Observable<Skills>{
+    return this.httpClient.get<Skills>(this.url + `detail/${id}`);
+  }
+
   public crear(Skills: Skills):Observable<any>{
     return this.httpClient.post<any>(this.url + 'crear', Skills);
   }

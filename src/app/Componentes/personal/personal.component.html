@@ -1,12 +1,13 @@
 <!-- seccion personal-->
 <div class="info" id="personal">
-  <article><h5 class="titulo">{{miPortfolio.titulo1}}</h5>
-    <p>ACA VA TEXTO DE PRESENTACION</p>
+  <article><h5 class="titulo">Sobre Mi</h5>
+    
+    <p>{{sobreMi.presentacion}}</p>
     <div class="container-video"><!-- video sobre mi -->
-      <iframe width="320" height="240" src="https://www.youtube.com/embed/DdMsN5sa7oQ"  
+      <iframe width="320" height="240" [src]="sobreMi.urlVideo"  
       title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
-
+  
    <!-- boton Modal --> 
    <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#editpersonal" >
     

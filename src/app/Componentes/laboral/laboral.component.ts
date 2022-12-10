@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortofolioService } from 'src/app/Servicios/portofolio.service';
+import { Experiencia } from 'src/app/model/experiencia';
+import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
 
 @Component({
   selector: 'app-laboral',
@@ -7,17 +8,17 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
   styleUrls: ['./laboral.component.css']
 })
 export class LaboralComponent implements OnInit {
-  experienciaLista: any;
-  miPortfolio: any;
-  responsabilidades: any;
-  constructor(private datosPortfolio: PortofolioService) { }
+  experiencia: Experiencia[]=[]
+  
+  constructor(private experienciaService: ExperienciaService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
-      this.experienciaLista=data.experiencia;
-      this.miPortfolio= data;
-    })
+    this.cargarExperiencia();
+  }
+  cargarExperiencia(): void{
+    this.experienciaService.getExperiencia().subscribe(data => {
+      this.experiencia=data;
+    });
 
   }
-
 }

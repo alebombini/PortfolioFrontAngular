@@ -1,10 +1,12 @@
 <!-- seccion estudios-->
 <div class="info" id="academica"> 
     <article>
-      <h5 class="titulo">{{miPortfolio.titulo2}}</h5>
+
+      <h5 class="titulo">Educacion</h5>
       <ul>
-        <li *ngFor="let educacion of educacionLista">
-          <p>{{educacion}}</p>
+        <li *ngFor="let estudios of estudios">
+          <p><b>{{estudios.titulo}} </b>  - {{estudios.institucion}} - {{estudios.fin}}</p>
+
           <div class="btn delete" type="button"><i class="fa-solid fa-trash"></i></div>
         </li>
         
