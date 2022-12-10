@@ -1,3 +1,7 @@
+import { EstudiosComponent } from "../Componentes/estudios/estudios.component";
+import { ModalExperienciaComponent } from "../Componentes/laboral/modal-experiencia/modal-experiencia.component";
+import { ProyectosComponent } from "../Componentes/proyectos/proyectos.component";
+
 export class persona {
     id?: number;
     nombre: String;
@@ -6,15 +10,16 @@ export class persona {
     titulo: String;
     fechaNac: String;
     email: String;
-    UrlGithub: String;
+    urlGithub: String;
     whatsapp: String;
-    UrlTelegram: String;
-    UrlLinkedIn: String;
-
+    urlTelegram: String;
+    urlLinkedIn: String;
+   
+    
 
     constructor(nombre: String, apellido: String, clave: String, titulo: String,
-        fechaNac: String, email: String, UrlGithub: String, whatsapp: String, UrlTelegram: String,
-        UrlLinkedIn: String) {
+        fechaNac: String, email: String, urlGithub: String, whatsapp: String, urlTelegram: String,
+        urlLinkedIn: String ) {
       
        this.nombre = nombre;
        this.apellido = apellido;
@@ -22,11 +27,10 @@ export class persona {
        this.titulo = titulo;
        this.fechaNac = fechaNac;
        this.email = email;
-       this.UrlGithub = UrlGithub;
+       this.urlGithub = urlGithub;
        this.whatsapp = whatsapp;
-       this.UrlTelegram = UrlTelegram;
-       this.UrlLinkedIn = UrlLinkedIn;
-
+       this.urlTelegram = urlTelegram;
+       this.urlLinkedIn = urlLinkedIn;
 
         }
 }

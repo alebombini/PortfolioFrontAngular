@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PortofolioService } from 'src/app/Servicios/portofolio.service';
+import { fotolinks } from 'src/app/model/fotolinks';
+import { FotolinksService } from 'src/app/Servicios/fotolinks.service';
+
 
 @Component({
   selector: 'app-card-links',
@@ -7,15 +9,27 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
   styleUrls: ['./card-links.component.css']
 })
 export class CardLinksComponent implements OnInit {
-  miPortfolio: any;
-  constructor(private datosPortfolio: PortofolioService) { }
+ 
+  fotolinks: fotolinks[] = [];
+
+  constructor(private fotolinksService: FotolinksService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      console.log(data);
-      this.miPortfolio= data;
-      
+    this.cargarFotolinks();
+   
+
+  }
+  cargarFotolinks():void{
+    this.fotolinksService.list().subscribe(data => {
+      this.fotolinks=data;
     });
   }
+ /* aca intente cargar x detalle
+  cargarDetail():void{
+    this.fotolinksService.detail(6).subscribe(data =>{
+      this.fotolinks[6]= data;
+    })
+  }*/
+
 
 }

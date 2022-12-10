@@ -14,8 +14,13 @@ import { ProyectosComponent } from './Componentes/proyectos/proyectos.component'
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { PortofolioService } from './Servicios/portofolio.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './Componentes/banner/editar/editar.component';
+import { ModalSkillsComponent } from './Componentes/skills/modal-skills/modal-skills.component';
+import { ModalFotosComponent } from './Componentes/card-links/modal-fotos/modal-fotos.component';
+import { ModalEstudiosComponent } from './Componentes/estudios/modal-estudios/modal-estudios.component';
+import { ModalExperienciaComponent } from './Componentes/laboral/modal-experiencia/modal-experiencia.component';
+import { ModalProyectosComponent } from './Componentes/proyectos/modal-proyectos/modal-proyectos.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +36,11 @@ import { EditarComponent } from './Componentes/banner/editar/editar.component';
         ProyectosComponent,
         FooterComponent,
         EditarComponent,
-      
+        ModalSkillsComponent,
+        ModalFotosComponent,
+        ModalEstudiosComponent,
+        ModalExperienciaComponent,
+        ModalProyectosComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -39,7 +48,8 @@ import { EditarComponent } from './Componentes/banner/editar/editar.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        FormsModule,
+        ReactiveFormsModule,
         
     ]
 })

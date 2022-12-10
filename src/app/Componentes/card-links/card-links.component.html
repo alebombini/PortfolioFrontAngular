@@ -1,42 +1,20 @@
  <!-- fotolinks a secciones-->
  <div class="d-flex flex-row mb-3" id="card">
-    <figure class="figure"><a href="#personal"><img class="img-thumbnail" [src]="miPortfolio.fotoPersonal" alt="foto sobre mi"><figcaption class="figure-caption">{{miPortfolio.titulo1}}</figcaption></a></figure>
-    <figure class="figure"><a href="#academica"><img [src]="miPortfolio.fotoEstudios" class="img-thumbnail" alt="foto estudios"><figcaption class="figure-caption">{{miPortfolio.titulo2}}</figcaption></a></figure>
-    <figure class="figure"><a href="#laboral"><img [src]="miPortfolio.fotoExperiencia" class="img-thumbnail" alt="foto experiencia"><figcaption class="figure-caption">{{miPortfolio.titulo3}}</figcaption></a></figure>
-    <figure class="figure"><a href="#skills"><img [src]="miPortfolio.fotoSkills" class="img-thumbnail" alt="foto skils"><figcaption class="figure-caption">{{miPortfolio.titulo4}}</figcaption></a></figure>
-    <figure class="figure"><a href="#proyectos"><img [src]="miPortfolio.fotoProyectos" class="img-thumbnail" alt="foto proyectos"><figcaption class="figure-caption">{{miPortfolio.titulo5}}</figcaption></a></figure>
    
+   <div class="for" *ngFor="let fotolink of fotolinks">
+    <figure class="figure">
+      <a [href]="fotolink.link">
+        <img [src]="fotolink.url_foto" class="img-thumbnail" alt="fotolink">
+        <figcaption class="figure-caption">{{fotolink.seccion}}
+        </figcaption>
+      </a>
+    </figure>
+   </div> 
+  
     <!-- boton Modal --> 
     <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#editFotos" >
       <span style="color: whitesmoke;"> <i class="fa-solid fa-pen-to-square"></i></span>
     </div>
   
   </div>
-  <!-- Modal -->
-<div class="modal fade" id="editFotos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar imágenes de links</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-        <p>Sobre Mi</p>
-        <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-        <p>Educacion</p>
-        <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-        <p>Experiencia</p>
-        <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-        <p>Skills</p>
-        <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-        <p>Proyectos</p>
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-modal-fotos></app-modal-fotos>

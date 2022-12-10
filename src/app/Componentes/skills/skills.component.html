@@ -8,8 +8,9 @@
           <div class="for" *ngFor="let skill of skills" >
             
             <!--boton borrar skill-->
-          <li class="flex-item" ><div class="btn delete" type="button">
-            <i class="fa-solid fa-trash"></i>
+          <li class="flex-item" >
+            <div class="btn delete" type="button">
+            <i class="fa-solid fa-trash" (click)="delete(skill.id)"></i>
           </div>
 
             <div class="progress">
@@ -104,34 +105,4 @@
         </article>
       </div>
 
-       <!-- Modal -->
-<div class="modal fade" id="agregarSkill" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Introducir Skill </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-        <br>
-        
-        <br>
-        <p>Nombre Skill</p> <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example">
-        <br>
-        <div class="mb-3">
-          
-          <label for="exampleFormControlTextarea1" class="form-label">Nivel</label>
-          <br>
-          <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example">
-        </div>
-        
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-  </div>
+<app-modal-skills></app-modal-skills>

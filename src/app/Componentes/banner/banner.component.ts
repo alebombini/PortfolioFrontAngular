@@ -9,10 +9,10 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-  miPortfolio: any;
+
   persona: persona= new persona("","", "", "","", "", "", "", "","");
 
-  constructor(public personaService: PersonaService) { }
+  constructor(private personaService: PersonaService) { }
 
   ngOnInit(): void {
     this.personaService.getPersona().subscribe(data => {this.persona = data;});
