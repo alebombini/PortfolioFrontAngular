@@ -1,6 +1,9 @@
 <!-- Modal -->
 <div class="modal fade" id="editBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+
+      <form [formGroup]="form"  (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
       <div class="modal-content">
         <div class="modal-header">
 
@@ -10,12 +13,22 @@
         </div>
         <div class="modal-body">
           <p>Titulo</p>
-          <input class="form-control form-control-sm" type="text" placeholder="Introduzca el titulo" aria-label=".form-control-sm example">
-        </div>
+          <input class="form-control form-control-sm" formControlName="titulo" type="text" 
+          placeholder="Introduzca el titulo" aria-label=".form-control-sm example"  
+          [(ngModel)]="titulo"
+            [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
+            <div *ngIf="Titulo.errors && Titulo.touched" >
+              <p *ngIf="Titulo.hasError('required')" class="text-danger">
+                El titulo es requerido.
+              </p>
+            </div>
+        
+          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
+      </form>
     </div>
   </div>

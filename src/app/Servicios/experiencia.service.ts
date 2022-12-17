@@ -12,20 +12,20 @@ export class ExperienciaService {
 
   constructor(private http:HttpClient) { }
 
-  public getExperiencia():Observable<Experiencia[]>{
+  public get():Observable<Experiencia[]>{
     return this.http.get<Experiencia[]>(this.url + 'traer');
   }
   public detail(id:number):Observable<Experiencia>{
     return this.http.get<Experiencia>(this.url + `detail/${id}`);
   }
 
-  public saveExperiencia(Estudios: Experiencia):Observable<any>{
+  public save(Experiencia: Experiencia):Observable<any>{
     return this.http.post<any>(this.url + 'crear', Experiencia);
   }
-  public editExperiencia(id: number, Experiencia: Experiencia):Observable<any>{
+  public edit(id: number, Experiencia: Experiencia):Observable<any>{
     return this.http.put<any>(this.url + `edit/${id}`, Experiencia);
   }
-  public deleteExperiencia(id:number):Observable<any>{
+  public delete(id:number):Observable<any>{
     return this.http.delete<any>(this.url + `delete/${id}`);
   }
 

@@ -21,6 +21,8 @@ import { ModalFotosComponent } from './Componentes/card-links/modal-fotos/modal-
 import { ModalEstudiosComponent } from './Componentes/estudios/modal-estudios/modal-estudios.component';
 import { ModalExperienciaComponent } from './Componentes/laboral/modal-experiencia/modal-experiencia.component';
 import { ModalProyectosComponent } from './Componentes/proyectos/modal-proyectos/modal-proyectos.component';
+import { EditarSobreMiComponent } from './Componentes/personal/editar-sobre-mi/editar-sobre-mi.component';
+import { InicioComponent } from './Componentes/inicio/inicio.component';
 
 @NgModule({
     declarations: [
@@ -41,6 +43,8 @@ import { ModalProyectosComponent } from './Componentes/proyectos/modal-proyectos
         ModalEstudiosComponent,
         ModalExperienciaComponent,
         ModalProyectosComponent,
+        EditarSobreMiComponent,
+        InicioComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

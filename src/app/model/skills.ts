@@ -4,8 +4,8 @@ export class Skills {
      nombreS: String;
      nivel: number;
 
-     constructor(id:number, personaId: number, nombreS: String, nivel:number){
-        this.id = id;
+     constructor(personaId: number, nombreS: String, nivel:number){
+      
         this.personaId = personaId;
         this.nombreS = nombreS;
         this.nivel = nivel;

@@ -3,23 +3,50 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar proyecto</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" 
+          aria-label="Close" (click)="limpiar()"></button>
         </div>
+        <form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="proyectosForm">
         <div class="modal-body">
-          <input class="form-control form-control-sm" type="text" placeholder="Nombre proyecto" aria-label=".form-control-sm example">
+
+          <input  class="form-control form-control-sm" type="text" placeholder="Nombre proyecto" aria-label=".form-control-sm example" 
+          formControlName="nombreP" [(ngModel)]="nombreP" 
+          [ngClass]="{'is-invalid': NombreP.errors && NombreP.touched, 'is-valid': !NombreP.errors && NombreP.touched}">
+          <div *ngIf="NombreP.errors && NombreP.touched">
+            <p *ngIf="NombreP.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
          <br>
          <br>
-          <input class="form-control form-control-sm" type="text" placeholder="Proyecto -URL" aria-label=".form-control-sm example">
+          <input class="form-control form-control-sm" type="text" placeholder="Proyecto -URL" aria-label=".form-control-sm example" 
+          formControlName="urlProyecto" [(ngModel)]="urlProyecto" 
+          [ngClass]="{'is-invalid': UrlProyecto.errors && UrlProyecto.touched, 'is-valid': !UrlProyecto.errors && UrlProyecto.touched}">
+          <div *ngIf="UrlProyecto.errors && UrlProyecto.touched">
+            <p *ngIf="UrlProyecto.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+          
+          
           <br>
          <br>
-          <input class="form-control form-control-sm" type="text" placeholder="Imagen- URL" aria-label=".form-control-sm example">
-         
+          <input class="form-control form-control-sm" 
+          type="text" placeholder="Imagen- URL" aria-label=".form-control-sm example"
+          formControlName="urlFotoProyecto" [(ngModel)]="urlFotoProyecto" 
+          [ngClass]="{'is-invalid': UrlFotoProyecto.errors && UrlFotoProyecto.touched, 'is-valid': !UrlFotoProyecto.errors && UrlFotoProyecto.touched}">
+          <div *ngIf="UrlFotoProyecto.errors && UrlFotoProyecto.touched">
+            <p *ngIf="UrlFotoProyecto.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
+      </form>
       </div>
     </div>
   </div>

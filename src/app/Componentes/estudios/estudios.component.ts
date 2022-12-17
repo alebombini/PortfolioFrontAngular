@@ -22,4 +22,19 @@ public cargarEstudios():void {
   });
 
 }
+delete(id?:number){
+  if(id != undefined){
+    this.estudiosService.delete(id).subscribe(
+      data =>{
+        alert("Eliminado") ;  //no entiendo porque esto no se ejecuta
+        this.cargarEstudios(); //ni esto
+      }, err =>{                 //pongo este mensaje aca porque esto se ejecuta siempre
+        alert("Eliminado correctamente") 
+        this.cargarEstudios();
+      }
+    )
+  }
+}
+
+
 }

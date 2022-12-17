@@ -1,24 +1,61 @@
 <!-- Modal -->
 <div class="modal fade" id="agregarEstudios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
+      <form [formGroup]="form"  (ngSubmit)="onCreate()" novalidate #f="ngForm">
       <div class="modal-content">
+
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="agregarEstudiosLabel">Introducir elemento  </h1>
+          
+          <h1 class="modal-title fs-5" id="agregarEstudiosLabel">Introducir formacion  </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+       
         <div class="modal-body">
         
+          <div class="form-group">
+            <label for="titulo" class="form-label">Introducir titulo</label>
+            <input type="text" formControlName="titulo" class="form-control" id="titulo" rows="3" [(ngModel)]="titulo"
+            [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
+            <div *ngIf="Titulo.errors && Titulo.touched" >
+              <p *ngIf="Titulo.hasError('required')" class="text-danger">
+                el titulo es requerido.
+              </p>
+            </div>
+          </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Introducir formacion</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="titulo" class="form-label">Introducir Institucion</label>
+            <input type="text" formControlName="institucion" class="form-control" id="institucion" rows="3" [(ngModel)]="institucion" required
+            [ngClass]="{'is-invalid': Institucion.errors && Institucion.touched, 'is-valid': !Institucion.errors && Institucion.touched}">
+            <div *ngIf="Institucion.errors && Institucion.touched" >
+              <p *ngIf="Institucion.hasError('required')" class="text-danger">
+                La institucion es requerida
+              </p>
+            </div>
+         
+          </div>
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Introducir fecha de inicio</label>
+            <input type="date" formControlName="inicio" class="form-control" id="inicio" rows="3" [(ngModel)]="inicio"
+            [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
+            <div *ngIf="Inicio.errors && Inicio.touched" >
+              <p *ngIf="Inicio.hasError('required')" class="text-danger">
+                La fecha de inicio es requerida.
+              </p>
+            </div>
+          
+          </div>
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Introducir fecha de finalizacion</label>
+            <input type="date" formControlName="fin" class="form-control" id="fin" rows="3" [(ngModel)]="fin" required>
           </div>
           
-         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
+        
       </div>
+    </form>
     </div>
     </div>

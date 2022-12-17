@@ -7,7 +7,7 @@
         <li *ngFor="let estudios of estudios">
           <p><b>{{estudios.titulo}} </b>  - {{estudios.institucion}} - {{estudios.fin}}</p>
 
-          <div class="btn delete" type="button"><i class="fa-solid fa-trash"></i></div>
+          <div class="btn delete" type="button"><i class="fa-solid fa-trash" (click)="delete(estudios.id)"></i></div>
         </li>
         
       </ul>

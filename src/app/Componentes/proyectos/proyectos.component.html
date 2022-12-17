@@ -10,15 +10,15 @@
             </a> 
             <!--boton borrar-->
            <div class="btn delete" type="button">
-              <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-trash" (click)="delete(proyecto.id)"></i>
             </div>
          </figure> 
+         
       </div> 
          <!--boton agregar proyecto-->
          <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#agregarProyecto" >
            <span style="color: whitesmoke;"> <i class="fa-solid fa-plus"></i></span>
           </div>
-        
         </div>
      </article>
     </div>

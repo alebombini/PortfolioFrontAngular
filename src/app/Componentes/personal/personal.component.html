@@ -1,44 +1,29 @@
 <!-- seccion personal-->
 <div class="info" id="personal">
   <article><h5 class="titulo">Sobre Mi</h5>
-    
+    <div class="for" *ngFor="let sobreMi of sobreMi" >
     <p>{{sobreMi.presentacion}}</p>
-    <div class="container-video"><!-- video sobre mi -->
-      <iframe width="320" height="240" [src]="sobreMi.urlVideo"  
+<!-- video sobre mi -->
+    <div class="container-video">
+     <iframe width="320" height="240" [src]="getVideoIframe(sobreMi.urlVideo)"  
       title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
-  
+  </div> 
    <!-- boton Modal --> 
-   <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#editpersonal" >
-    
+   <button class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" 
+   data-bs-target="#editpersonal" routerLink="/sobreMi/edit/{{sobreMi.id}}">
       <i class="fa-solid fa-pen-to-square"></i>
-  
+   </button>
+ 
+     
+  <!--boton borrar-->
+    <div class="btn delete" type="button">
+    <i class="fa-solid fa-trash" (click)="delete(sobreMi.id)"></i>
   </div>
-</div>
 
-<!-- Modal -->
-<div class="modal fade" id="editpersonal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar texto y/o video de presentacion</h1>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <input class="form-control form-control-sm" type="text" placeholder="Introduzca la URL" aria-label=".form-control-sm example">
-      <p>URL video</p>
-     
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Presentacion</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      
-     
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>
+
+</div>
+  </article>
   </div>
-</div>
-</div>
+ 
+<app-editar-sobre-mi></app-editar-sobre-mi>

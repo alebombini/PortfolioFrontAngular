@@ -6,37 +6,90 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">Introducir Experiencia </h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <label for="start">Inicio:</label>
+            <form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaForm" novalidate #f="ngForm">
+            
+              <div class="modal-body">
+              <label for="inicio">Inicio:</label>
               <br>
-              <input type="date" id="start" name="inicio"> 
+              <input type="date" class="form-control form-control-sm"  id="inicio" name="inicio" formControlName="inicio" [(ngModel)]="inicio" 
+          [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
+          <div *ngIf="Inicio.errors && Inicio.touched">
+            <p *ngIf="Inicio.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+              
               <br>
       
-              <label for="start">Fin:</label>
+              <label for="fin">Fin:</label>
               <br>
       
-              <input type="date" id="end" name="end">
+              <input type="date" class="form-control form-control-sm" id="fin" name="fin" formControlName="fin" [(ngModel)]="fin" 
+          [ngClass]="{'is-invalid': Fin.errors && Fin.touched, 'is-valid': !Fin.errors && Fin.touched}">
+          <div *ngIf="Fin.errors && Fin.touched">
+            <p *ngIf="Fin.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+              
+             
               <br>
+              <p>Empresa</p> 
+              <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
+              formControlName="empresa" [(ngModel)]="empresa" 
+          [ngClass]="{'is-invalid': Empresa.errors && Empresa.touched, 'is-valid': !Empresa.errors && Empresa.touched}">
+          <div *ngIf="Empresa.errors && Empresa.touched">
+            <p *ngIf="Empresa.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+          <br>
+          <p>Logo</p> 
+          <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
+          formControlName="logo" [(ngModel)]="logo" 
+      [ngClass]="{'is-invalid': Logo.errors && Logo.touched, 'is-valid': !Logo.errors && Logo.touched}">
+      <div *ngIf="Logo.errors && Logo.touched">
+        <p *ngIf="Logo.hasError('required')" class="text-danger">
+          Campo requerido
+        </p>
+      </div>
               <br>
-              <p>Cargo</p> <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example">
+              <p>Cargo</p> 
+              <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
+              formControlName="cargo" [(ngModel)]="cargo" 
+          [ngClass]="{'is-invalid': Cargo.errors && Cargo.touched, 'is-valid': !Cargo.errors && Cargo.touched}">
+          <div *ngIf="Cargo.errors && Cargo.touched">
+            <p *ngIf="Cargo.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+              
               <br>
               <div class="mb-3">
                 
                 <label for="exampleFormControlTextarea1" class="form-label">Responsabilidades</label>
                 <br>
-                <input class="form-control form-control-sm" type="text" placeholder="Responsabilidades" aria-label=".form-control-sm example">
+                <input class="form-control form-control-sm" type="text" placeholder="Responsabilidades" aria-label=".form-control-sm example"
+                formControlName="descripcion" [(ngModel)]="descripcion" 
+          [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}">
+          <div *ngIf="Descripcion.errors && Descripcion.touched">
+            <p *ngIf="Descripcion.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
+                
+  
                 <br>
-                <input class="form-control form-control-sm" type="text" placeholder="Responsabilidades" aria-label=".form-control-sm example">
-                <br>
-                <input class="form-control form-control-sm" type="text" placeholder="Responsabilidades" aria-label=".form-control-sm example">
+               
               </div>
               
              
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
+            </form>
           </div>
         </div>
         </div>

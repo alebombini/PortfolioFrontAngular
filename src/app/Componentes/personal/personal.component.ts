@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SobreMi } from 'src/app/model/sobre-mi';
-import { PortofolioService } from 'src/app/Servicios/portofolio.service';
 import { SobreMiService } from 'src/app/Servicios/sobre-mi.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,20 +10,43 @@ import { SobreMiService } from 'src/app/Servicios/sobre-mi.service';
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
-  //sobreMi: SobreMi[]=[];
-  sobreMi: SobreMi= new SobreMi("", "");
-  constructor(private sobremiService : SobreMiService) { }
+  sobreMi: SobreMi []=[];
+  
+  constructor(private sobremiService : SobreMiService, private _sanitizer: DomSanitizer
+    ) { }
 
   ngOnInit(): void {
-    this.sobremiService.getById(2).subscribe(data =>{
-      this.sobreMi=data});
+   
+this.cargarSobreMi();
 
-   /*   
-     this.sobremiService.getSobreMi().subscribe(data => {
-  this.sobreMi=data;
- }); */
+  }
+  cargarSobreMi():void{
+    this.sobremiService.getSobreMi().subscribe(data => {
+      this.sobreMi=data ;
+    });
   }
 
+getVideoIframe(url: String) {
+  var video, results;
+  if (url === null){
+    return '';
+  }
+results = url.match('[\\?&]v=[^&#*]');
+video = (results === null) ? url : results[1];
+return this._sanitizer.bypassSecurityTrustResourceUrl
+('https://www.youtube.com/embed/' + video)
+}
+delete(id:number){
+  if(id != undefined){
+    this.sobremiService.deleteSobreMi(id).subscribe(
+     _data=>  {
+        this.cargarSobreMi();  //esto no me lo ejecuta 
+      }, err  =>{
+        alert("Elemento eliminado")
+        this.cargarSobreMi(); 
+      }
+    )
+  }
 
-
+}
 }

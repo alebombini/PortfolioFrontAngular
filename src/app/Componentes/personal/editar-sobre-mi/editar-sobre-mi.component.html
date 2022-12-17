@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div class="modal fade" id="editpersonal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="sobreMi">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form [formGroup]="form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="form-group">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar texto y/o video de presentacion</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+       
+         
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Presentacion</label>
+            <textarea class="form-control"  formControlName="presentacion" [(ngModel)]="sobreMi.presentacion" 
+             rows="3" [ngClass]="{'is-invalid': Presentacion.errors && Presentacion.touched, 'is-valid': !Presentacion.errors && Presentacion.touched}"></textarea>
+            <p *ngIf="Presentacion.hasError('required')" class="text-danger">
+                El texto de presentacion es requerido.
+              </p>
+              <p *ngIf="Presentacion.errors" class="text-danger">
+                El texto de presentacion debe ser mas extenso.
+              </p>
+              <label for="urlVideo"> URL Video </label>
+              <input id="urlVideo" formControlName="urlVideo" class="form-control form-control-sm" type="url" 
+              [(ngModel)]="sobreMi.urlVideo"  [ngClass]="{'is-invalid': UrlVideo.errors && UrlVideo.touched, 'is-valid': !UrlVideo.errors && UrlVideo.touched}" aria-label=".form-control-sm example">
+              <p *ngIf="UrlVideo.errors" class="text-danger">
+                La URL es incorrecta.
+              </p>
+          </div>
+          
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+        </form>
+      
+      </div>
+    </div>
+    </div>

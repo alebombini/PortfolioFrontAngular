@@ -17,7 +17,7 @@ export class PersonaService {
     return this.http.get<persona>(this.URL+ 'traer/perfil');
 
   }
-  public findPersona(): Observable<persona[]>{
+  public findPersona(id: number): Observable<persona[]>{
     return this.http.get<persona[]>(this.URL + 'traer');
   }
   public crear(persona: persona):Observable<any>{

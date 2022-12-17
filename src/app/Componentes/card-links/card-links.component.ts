@@ -24,12 +24,5 @@ export class CardLinksComponent implements OnInit {
       this.fotolinks=data;
     });
   }
- /* aca intente cargar x detalle
-  cargarDetail():void{
-    this.fotolinksService.detail(6).subscribe(data =>{
-      this.fotolinks[6]= data;
-    })
-  }*/
-
 
 }

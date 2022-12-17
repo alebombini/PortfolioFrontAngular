@@ -22,4 +22,21 @@ export class ProyectosComponent implements OnInit {
       
     });
   }
+  delete(id:number){
+    if(id != undefined){
+      this.proyectosService.deleteProyecto(id).subscribe(
+       data=>  {
+          this.cargarProyectos();  //esto no me lo ejecuta 
+        }, err  =>{
+          alert("Elemento eliminado")
+          this.cargarProyectos(); 
+        }
+      )
+    }
+  }
+
+
+
+
+
 }

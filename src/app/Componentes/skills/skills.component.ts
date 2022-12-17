@@ -27,11 +27,11 @@ export class SkillsComponent implements OnInit {
 delete(id:number){
   if(id != undefined){
     this.servSkills.delete(id).subscribe(
-     data=>  {
-        this.cargarSkills();
+     _data=>  {
+        this.cargarSkills();  //esto no me lo ejecuta 
       }, err  =>{
         alert("Elemento eliminado")
-        window.location.reload()  
+        this.cargarSkills(); 
       }
     )
   }

@@ -1,6 +1,6 @@
 export class Proyectos {
-    id?: number;
-    personaId?: number;
+    id: number;
+    personaId: number;
     nombreP: String;
     urlProyecto: String;
     urlFotoProyecto: String;

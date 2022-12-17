@@ -1,13 +1,3 @@
-.loginbt{
-    background-color:black;
-    position: absolute;
-    margin-left: 95%;
-    margin-top: 1%;
-
-}
-.btn.btn-light.fa-sm{
-    background-color:whitesmoke;
-    position: absolute;
-    margin-left: 94%;
-    margin-top: 4%;
+.containerLog{
+   position:absolute;
 }

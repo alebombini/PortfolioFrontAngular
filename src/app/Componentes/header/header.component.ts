@@ -9,7 +9,7 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  persona: persona = new persona("", "", "", "", "", "", "", "", "", "");
+  persona: persona = new persona("", "", "", "", "", "", "", "", "", "", "","");
 
   constructor( private personaService: PersonaService) { }
 

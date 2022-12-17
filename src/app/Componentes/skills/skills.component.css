@@ -1,16 +1,20 @@
-.flex-item {
+.item {
    line-height: 1.4;
    font-weight: bold;
-   width: 300%;
-   margin-left: 25px;
-   padding: 10px;
+   padding: 5px;
    background-color: white;
+  
+  
+   
 }
 ul {
     list-style: none;
-    margin-left: 13%;
-    
+   
 }
-.contenedor-flex {
-    flex-wrap: wrap;
+.container-fluid {
+   
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
 }

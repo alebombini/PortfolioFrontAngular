@@ -15,22 +15,21 @@
               <br>
               <label for="nombreSkill" class="form-label" >Nombre skill</label>
               <input class="form-control form-control-sm" id="nombreSkill" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
-              formControlName="nombreS">
-             <!-- [(ngModel)]="nombreS" [ngClass]="{'is-invalid': NombreS.errors && NombreS.touched, 'is-valid': !NombreS.errors && NombreS.touched}">
+              formControlName="nombreS"
+            [(ngModel)]="nombreS"  [ngClass]="{'is-invalid': NombreS.errors && NombreS.touched, 'is-valid': !NombreS.errors && NombreS.touched}">
               <div *ngIf="NombreS.errors && NombreS.touched">
                   <p *ngIf="NombreS.hasError('required')" class="text-danger">
                     Campo requerido
                   </p>
 
-              </div>-->
+              </div>
               <br>
               <div class="mb-3">  
                 <label for="nivelSkills" class="form-label" >Nivel</label>
                 <br>
                 <input class="form-control form-control-sm" type="number" min="0" max="100" id="nivelSkills" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
-                formControlName="nivel" >
-               <!-- [(ngModel)]="nivel" [ngClass]="{'is-invalid': Nivel.errors && Nivel.touched, 'is-valid': !Nivel.errors && Nivel.touched}">-->
-               <!-- <div *ngIf="Nivel.errors && Nivel.touched">
+                formControlName="nivel" [(ngModel)]="nivel"  [ngClass]="{'is-invalid': Nivel.errors && Nivel.touched, 'is-valid': !Nivel.errors && Nivel.touched}">
+                <div *ngIf="Nivel.errors && Nivel.touched">
                   <p *ngIf="Nivel.hasError('required')" class="text-danger">
                     Campo requerido
                   </p>
@@ -40,14 +39,14 @@
                   <p *ngIf="Nivel.hasError('max')" class="text-danger">
                     El porcentaje maximo es 100
                   </p>
-
-           -->
+                </div>
+           
 
               </div>
                         
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Close</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save changes</button>
             </div>
           </form>

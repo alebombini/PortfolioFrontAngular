@@ -7,15 +7,15 @@
         <ul>
           <li *ngFor="let experiencia of experiencia">
             <img class="logo" [src]="experiencia.logo">
-            <h6>{{experiencia.fin}}, {{experiencia.cargo}} - {{experiencia.empresa}}</h6>
-            <div class="btn delete" type="button">
-              <i class="fa-solid fa-trash"></i>
-            </div>
+           <p> {{experiencia.inicio}} a {{experiencia.fin}}</p>
+           <h5>{{experiencia.cargo}}  en {{experiencia.empresa}}.</h5>
+            
             <ul>
               <li>{{experiencia.descripcion}}</li>
-              
            </ul>
-         
+           <div class="btn delete" type="button">
+            <i class="fa-solid fa-trash" (click)="delete(experiencia.id)"></i>
+          </div>
         </ul>
       </div>
             <!-- boton Modal --> 

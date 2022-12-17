@@ -19,13 +19,13 @@ url='http://localhost:8080/estudios/';
       return this.http.get<Estudios>(this.url + `detail/${id}`);
     }
 
-    public saveEstudios(Estudios: Estudios):Observable<any>{
+    public save(Estudios: Estudios):Observable<any>{
       return this.http.post<any>(this.url + 'crear', Estudios);
     }
-    public editEstudios(id: number, Estudios: Estudios):Observable<any>{
+    public edit(id: number, Estudios: Estudios):Observable<any>{
       return this.http.put<any>(this.url + `edit/${id}`, Estudios);
     }
-    public deleteEstudios(id:number):Observable<any>{
+    public delete(id:number):Observable<any>{
       return this.http.delete<any>(this.url + `delete/${id}`);
     }
   

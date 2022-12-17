@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { SkillsService } from 'src/app/Servicios/skills.service';
 import { Skills } from 'src/app/model/skills';
 
@@ -11,24 +11,25 @@ import { Skills } from 'src/app/model/skills';
 
 export class ModalSkillsComponent implements OnInit {
   form: FormGroup;
+  personaId: number = 2;
   nombreS: string='';
   nivel: number= 0;
-  Skills: any;
-
+ 
+  
  
   constructor(private formBuilder: FormBuilder, private servSkills:SkillsService) { 
 
   //creo el grupo de controles para el formulario
     this.form= this.formBuilder.group({
-      nombreS: ['',[Validators.required]],
-      nivel:['',[Validators.required, Validators.min(0), Validators.max(100)]],
+      nombreS: ['',[Validators.required, Validators.minLength(2) ]],
+      nivel:['',[Validators.required, Validators.min(1), Validators.max(100)]]
     })
   }
 
   ngOnInit(): void {
   }
 
-  //decalarar para las validaciones
+  //decalarar para las validaciones los datos que cargo en el formulario
 get NombreS(){
   return this.form.get("nombreS");
 }
@@ -38,21 +39,22 @@ get Nivel(){
 
 //validaciones
 get NombreSValid(){
-  return //this.NombreS.touched && !this.NombreS.valid;
+  return this.NombreS.touched && !this.NombreS.valid;
 }
 
 get NivelValid(){
-  return //this.Nivel.touched && !this.Nivel.valid;
+  return this.Nivel.touched && !this.Nivel.valid;
 }
 
 onCreate():void{
-  const sk = new this.Skills(this.NombreS, this.Nivel);
+  const sk = new Skills(this.personaId, this.nombreS, this.nivel);
   this.servSkills.crear(sk).subscribe(data=>{
     alert("Elemento agregado");
-    window.location.reload;
-  }, err =>{
-    alert("No se pudo agregar el elemento");
+    window.location.reload();
+  }, err =>{                     //siempre ejecuta el error por el id no declarado
+    alert("error");
     this.form.reset();
+    
   });
 
 }
