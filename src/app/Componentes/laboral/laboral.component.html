@@ -7,7 +7,13 @@
         <ul>
           <li *ngFor="let experiencia of experiencia">
             <img class="logo" [src]="experiencia.logo">
-           <p> {{experiencia.inicio}} a {{experiencia.fin}}</p>
+          
+           <div *ngIf="experiencia.esTrabajoActual">
+                <p>{{experiencia.inicio}} - <b>ACTUAL</b> </p>
+           </div>
+           <div *ngIf="!experiencia.esTrabajoActual">
+           <p>{{experiencia.inicio}} a {{experiencia.fin}}</p> 
+          </div>
            <h5>{{experiencia.cargo}}  en {{experiencia.empresa}}.</h5>
             
             <ul>

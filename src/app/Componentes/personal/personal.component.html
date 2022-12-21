@@ -3,12 +3,13 @@
   <article><h5 class="titulo">Sobre Mi</h5>
     <div class="for" *ngFor="let sobreMi of sobreMi" >
     <p>{{sobreMi.presentacion}}</p>
-<!-- video sobre mi -->
+<!-- video sobre mi - agregar mas adelante
     <div class="container-video">
      <iframe width="320" height="240" [src]="getVideoIframe(sobreMi.urlVideo)"  
       title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
-  </div> 
+  </div>
+ -->
    <!-- boton Modal --> 
    <button class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" 
    data-bs-target="#editpersonal" routerLink="/sobreMi/edit/{{sobreMi.id}}">
@@ -16,10 +17,10 @@
    </button>
  
      
-  <!--boton borrar-->
+  <!--boton borrar
     <div class="btn delete" type="button">
     <i class="fa-solid fa-trash" (click)="delete(sobreMi.id)"></i>
-  </div>
+  </div>-->
 
 
 </div>
@@ -27,3 +28,6 @@
   </div>
  
 <app-editar-sobre-mi></app-editar-sobre-mi>
+
+<!--No agrego funcion agregar porque para esta seccion solo tiene sentido editar,
+   no deberia borrarse.-->

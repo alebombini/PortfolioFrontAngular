@@ -28,9 +28,8 @@ delete(id:number){
   if(id != undefined){
     this.servSkills.delete(id).subscribe(
      _data=>  {
-        this.cargarSkills();  //esto no me lo ejecuta 
-      }, err  =>{
-        alert("Elemento eliminado")
+      }, ()  =>{
+        alert("Elemento agregado")
         this.cargarSkills(); 
       }
     )

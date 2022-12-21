@@ -11,7 +11,7 @@ import { EstudiosService } from 'src/app/Servicios/estudios.service';
 })
 export class ModalEstudiosComponent implements OnInit {
   form: FormGroup;
-  personaId: number = 2;
+  personaId: number = 1;     
   titulo: String = '';
   institucion: String= '';
   inicio: String= '';
@@ -47,19 +47,19 @@ export class ModalEstudiosComponent implements OnInit {
   onCreate(): void {
     const estu = new Estudios(this.personaId, this.titulo, this.institucion, this.inicio, this.fin);
     this.estudiosService.save(estu).subscribe(data=>{
+    }, () =>{
       alert("Elemento agregado");
-      //this.form.reset();
-      window.location.reload;
-    }, err =>{
-      alert("fallo");
+      this.limpiar();
       window.location.reload;
     }
     )
   }
-
+  limpiar():void{
+    this.form.reset();
+  }
 
 }
-  //este del video de mgb 
+  //este me ejecuta siempre el mensaje de error
 /*onCreate(): void {
   const estu = new Estudios( this.titulo, this.institucion, this.inicio, this.fin);
   this.estudiosService.save(estu).subscribe(data =>{

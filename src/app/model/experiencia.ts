@@ -7,7 +7,7 @@ export class Experiencia {
     descripcion: String;
     inicio: String;
     fin: String;
-    esTrabajoActual: boolean;
+    esTrabajoActual: Boolean;
 
 
      constructor(empresa: String, logo: String, cargo: String, descripcion: String, inicio: String, fin: String){
@@ -17,7 +17,7 @@ export class Experiencia {
         this.descripcion= descripcion;
         this.inicio= inicio;
         this.fin= fin;
-       // this.esTrabajoActual= esTrabajoActual;
+        this.esTrabajoActual= this.esTrabajoActual;
         
 
      }

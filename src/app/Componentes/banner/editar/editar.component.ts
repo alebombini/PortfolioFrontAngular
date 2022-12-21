@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PersonaService } from 'src/app/Servicios/persona.service';
 import { persona } from 'src/app/model/persona';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -10,12 +11,13 @@ import { persona } from 'src/app/model/persona';
   styleUrls: ['./editar.component.css']
 })
 export class EditarComponent implements OnInit {
-  persona: persona= new persona("","", "", "","", "", "", "", "","", "", "");
+  persona: persona= null;
   form: FormGroup;
-  personaId: number = 2;
   titulo:String ='';
+  id: number = 2;
 
-  constructor(private formBuilder: FormBuilder, private servPersona: PersonaService) {
+  constructor(private formBuilder: FormBuilder, private servPersona: PersonaService, 
+    private activatedRoute: ActivatedRoute, private router: Router) {
     this.form= this.formBuilder.group({    
       //inicializo el formulario 
       titulo: ['', [Validators.required, Validators.minLength(5)]],  
@@ -34,6 +36,19 @@ onCreate(): void {
     
     
   }
+  onUpdate(): void{
+    const id = this.activatedRoute.snapshot.params['id']; 
+    this.servPersona.edit(this.id, this.persona).subscribe(
+      data => {
+        alert("la informacion fue modificada");
+        this.router.navigate(['']);
+      }, err =>{
+        alert("error");
+        this.router.navigate(['']);
+      }
+    )
+  }
+  
 
 
 }

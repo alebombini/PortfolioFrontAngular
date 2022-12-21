@@ -12,7 +12,7 @@ import { SobreMiService } from 'src/app/Servicios/sobre-mi.service';
 export class EditarSobreMiComponent implements OnInit {
   form: FormGroup;
   sobreMi: SobreMi = null;
-  personaId: number = 2;
+  personaId: number = 1;
   id: number = 8;
   //presentacion: string= "";
   //urlVideo: String ="";
@@ -64,7 +64,7 @@ get UrlVideo(){
   }
 //metodo para traer la info de la ddbb
   cargarInfo(){
-    this.servSobreMi.getById(8).subscribe(data => {
+    this.servSobreMi.getById(1).subscribe(data => {   //le pongo id fijo porque solo tendre 1 info personal
       this.sobreMi = data;
     });
   }

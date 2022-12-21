@@ -16,19 +16,20 @@ export class ModalExperienciaComponent implements OnInit {
   descripcion:  String ="";
   inicio:  String ="";
   fin:  String ="";
-  esTrabajoActual: boolean = false;
-  personaId: number =2;
+  esTrabajoActual: boolean;
+  personaId: number = 1;
   
   
 constructor(private formBuilder: FormBuilder, private expeService: ExperienciaService) {
 //creo el grupo de controles para el formulario
   this.form= this.formBuilder.group({
     inicio:['',[Validators.required]],
-    fin:['',[Validators.required]],
+    fin:['', [Validators.minLength(8)]],
     empresa: ['',[Validators.required, Validators.minLength(2) ]],
     logo:['',[Validators.required]],
     cargo: ['',[Validators.required, Validators.minLength(2) ]],
     descripcion:['',[Validators.required, Validators.minLength(2)]],
+   
     
   })
 }
@@ -55,6 +56,8 @@ get Descripcion(){
 get Fin(){
   return this.form.get("fin");
 }
+
+
 //validaciones
 get EmpresaValid(){
   return this.Empresa.touched && !this.Empresa.valid;
@@ -73,18 +76,18 @@ get InicioValid(){
 }
 get FinValid(){
   return this.Fin.touched && !this.Fin.valid;
+
 }
 
 onCreate():void{
   const expe = new Experiencia(this.empresa, this.logo, this.cargo, this.descripcion, 
     this.inicio, this.fin);
+    this.esActual();
     this.expeService.save(expe).subscribe(
-      data=>{
-     // alert("Elemento añadido");
-      window.location.reload();
-    }, err =>{
+      data=>{  
+    }, () =>{
       alert("Elemento agregado");
-      //this.form.reset();
+      this.limpiar();
       window.location.reload();
     });
 
@@ -94,5 +97,12 @@ limpiar():void{
   this.form.reset();
 }
 
+esActual():void{
+  if(this.fin == null){
+    this.esTrabajoActual = true;
+  }else{
+    this.esTrabajoActual = false;
+  }
+}
 
 }

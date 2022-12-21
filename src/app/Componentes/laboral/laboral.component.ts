@@ -26,8 +26,8 @@ export class LaboralComponent implements OnInit {
     if(id != undefined){
       this.experienciaService.delete(id).subscribe(
        data=>  {
-          this.cargarExperiencia();  //esto no me lo ejecuta 
-        }, err  =>{
+        //  this.cargarExperiencia();  esto no me lo ejecuta 
+        }, ()  =>{
           alert("Elemento eliminado")
           this.cargarExperiencia(); 
         }

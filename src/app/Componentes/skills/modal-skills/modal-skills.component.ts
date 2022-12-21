@@ -11,10 +11,10 @@ import { Skills } from 'src/app/model/skills';
 
 export class ModalSkillsComponent implements OnInit {
   form: FormGroup;
-  personaId: number = 2;
+  personaId: number = 1;
   nombreS: string='';
   nivel: number= 0;
- 
+  
   
  
   constructor(private formBuilder: FormBuilder, private servSkills:SkillsService) { 
@@ -49,18 +49,15 @@ get NivelValid(){
 onCreate():void{
   const sk = new Skills(this.personaId, this.nombreS, this.nivel);
   this.servSkills.crear(sk).subscribe(data=>{
-    alert("Elemento agregado");
-    window.location.reload();
-  }, err =>{                     //siempre ejecuta el error por el id no declarado
-    alert("error");
-    this.form.reset();
-    
+  }, err =>{                     //siempre ejecuta el mensaje de error 
+   // this.form.reset();
+   window.location.reload();
+   
   });
 
 }
 limpiar():void{
   this.form.reset();
 }
-
 
 }

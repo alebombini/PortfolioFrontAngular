@@ -4,11 +4,12 @@
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Introducir Experiencia </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
             </div>
             <form [formGroup]="form" (ngSubmit)="form.valid && onCreate()" name="experienciaForm" novalidate #f="ngForm">
             
               <div class="modal-body">
+<!--Input fecha inicio (obligatorio)-->  
               <label for="inicio">Inicio:</label>
               <br>
               <input type="date" class="form-control form-control-sm"  id="inicio" name="inicio" formControlName="inicio" [(ngModel)]="inicio" 
@@ -20,10 +21,9 @@
           </div>
               
               <br>
-      
+ <!--Input fecha fin (opcional)-->
               <label for="fin">Fin:</label>
               <br>
-      
               <input type="date" class="form-control form-control-sm" id="fin" name="fin" formControlName="fin" [(ngModel)]="fin" 
           [ngClass]="{'is-invalid': Fin.errors && Fin.touched, 'is-valid': !Fin.errors && Fin.touched}">
           <div *ngIf="Fin.errors && Fin.touched">
@@ -31,8 +31,12 @@
               Campo requerido
             </p>
           </div>
-              
-             
+          <div *ngIf="!Fin.touched && !Fin.errors">
+              <p> Es trabajo actual</p>
+          </div>
+          
+          <br>
+<!--Input nombre empresa-->     
               <br>
               <p>Empresa</p> 
               <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
@@ -44,6 +48,7 @@
             </p>
           </div>
           <br>
+<!--Input Link logo empresa-->
           <p>Logo</p> 
           <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
           formControlName="logo" [(ngModel)]="logo" 
@@ -54,6 +59,7 @@
         </p>
       </div>
               <br>
+  <!--Input cargo-->
               <p>Cargo</p> 
               <input class="form-control form-control-sm" type="text" placeholder="Ingrese aqui" aria-label=".form-control-sm example"
               formControlName="cargo" [(ngModel)]="cargo" 
@@ -62,11 +68,11 @@
             <p *ngIf="Cargo.hasError('required')" class="text-danger">
               Campo requerido
             </p>
-          </div>
-              
+          </div>   
               <br>
+
               <div class="mb-3">
-                
+<!--Input descripcion del puesto-->        
                 <label for="exampleFormControlTextarea1" class="form-label">Responsabilidades</label>
                 <br>
                 <input class="form-control form-control-sm" type="text" placeholder="Responsabilidades" aria-label=".form-control-sm example"
@@ -86,8 +92,8 @@
              
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" (click)="limpiar()" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" >Save changes</button>
             </div>
             </form>
           </div>

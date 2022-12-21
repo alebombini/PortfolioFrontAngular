@@ -7,7 +7,7 @@
         <div class="modal-header">
           
           <h1 class="modal-title fs-5" id="agregarEstudiosLabel">Introducir formacion  </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
         </div>
        
         <div class="modal-body">
@@ -51,7 +51,7 @@
           
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="limpiar()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
         

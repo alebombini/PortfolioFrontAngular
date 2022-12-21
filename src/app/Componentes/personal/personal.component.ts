@@ -26,16 +26,17 @@ this.cargarSobreMi();
     });
   }
 
-getVideoIframe(url: String) {
+getVideoIframe(url: String) {                //para que se pueda ver el video
   var video, results;
   if (url === null){
     return '';
   }
-results = url.match('[\\?&]v=[^&#*]');
+results = url.match('[\\?&]v=[^&#*]');           //para que se pueda ver el video
 video = (results === null) ? url : results[1];
 return this._sanitizer.bypassSecurityTrustResourceUrl
 ('https://www.youtube.com/embed/' + video)
 }
+
 delete(id:number){
   if(id != undefined){
     this.sobremiService.deleteSobreMi(id).subscribe(
