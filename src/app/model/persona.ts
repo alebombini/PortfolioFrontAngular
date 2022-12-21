@@ -3,7 +3,8 @@ import { ModalExperienciaComponent } from "../Componentes/laboral/modal-experien
 import { ProyectosComponent } from "../Componentes/proyectos/proyectos.component";
 
 export class persona {
-    id?: number;
+  
+    id: number;
     nombre: String;
     apellido: String;
     clave: String;
@@ -13,14 +14,14 @@ export class persona {
     whatsapp: String;
     urlTelegram: String;
     urlLinkedIn: String;
-    presentacion: String;
-    urlVideo: String;
    
+    //static isLogged: boolean;
+ 
     
 
     constructor(nombre: String, apellido: String, clave: String, titulo: String,
         fechaNac: String, email: String, urlGithub: String, whatsapp: String, urlTelegram: String,
-        urlLinkedIn: String, presentacion: String, urlVideo: String) {
+        urlLinkedIn: String) {
       
        this.nombre = nombre;
        this.apellido = apellido;
@@ -31,8 +32,6 @@ export class persona {
        this.whatsapp = whatsapp;
        this.urlTelegram = urlTelegram;
        this.urlLinkedIn = urlLinkedIn;
-       this.presentacion = presentacion;
-       this.urlVideo = urlVideo;
 
         }
 }
