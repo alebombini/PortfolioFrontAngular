@@ -1,5 +1,6 @@
 .navbar.navbar-expand-sm.bg-success{
-  background-color:rgba(102, 111, 213, 0.772) !important;  
+  background-color:rgba(102, 111, 213, 0.772) !important;
+  max-height: fit-content;  
 } 
 
 a.nav-link.active:hover, .btn.btn-secondary.btn-sm.dropdown-toggle:hover { 
@@ -14,13 +15,18 @@ a.nav-link.active:hover, .btn.btn-secondary.btn-sm.dropdown-toggle:hover {
   font-size: smaller;
 }
 .loginbt{
-  background-color:black;
-  position: absolute;
-  margin-left: 10%;
+ display: inline-block;
+
 }
 #outbt{
   display: none;
   background-color:whitesmoke;
 }
 
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar-right {
+    width: 100%;
+  }
+  }
 

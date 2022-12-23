@@ -7,7 +7,6 @@ body {
   }
 
   .btn.lapiz {
-    /*display: none;*/
     display: block;
   }
   
@@ -46,12 +45,6 @@ body {
   font-family: Impact, serif;
   text-align: center;
   }  
-  
-  /*h5 {
-  margin-top: 4%;
-  color: rgb(255, 255, 255);
-  background-color: rgb(25, 22, 22);
-  } */
   
   h6 {
   font-weight: bold;
@@ -128,3 +121,10 @@ body {
     width: 100%;
   }
   }
+/*
+  @media (min-width: 320px) and (max-width: 480px){
+    body {
+      width: 100%;
+    }
+  } 
+  */
