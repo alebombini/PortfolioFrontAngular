@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudios } from 'src/app/model/estudios';
+import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 import { EstudiosService } from 'src/app/Servicios/estudios.service';
 
 @Component({
@@ -9,11 +10,20 @@ import { EstudiosService } from 'src/app/Servicios/estudios.service';
 })
 export class EstudiosComponent implements OnInit {
   estudios: Estudios[]= [];
+  modoEdit: any;
 
-  constructor(private estudiosService: EstudiosService) { }
+  constructor(private estudiosService: EstudiosService, private autService: AutenticacionService) { }
 
   ngOnInit(): void {
     this.cargarEstudios();
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
+
     
   }
 public cargarEstudios():void {

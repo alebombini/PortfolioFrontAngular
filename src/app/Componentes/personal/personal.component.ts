@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SobreMi } from 'src/app/model/sobre-mi';
 import { SobreMiService } from 'src/app/Servicios/sobre-mi.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 
 
 @Component({
@@ -11,13 +12,22 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class PersonalComponent implements OnInit {
   sobreMi: SobreMi []=[];
+  modoEdit: any;
   
-  constructor(private sobremiService : SobreMiService, private _sanitizer: DomSanitizer
-    ) { }
+  constructor(private sobremiService : SobreMiService, private _sanitizer: DomSanitizer, 
+    private autService: AutenticacionService) { }
 
   ngOnInit(): void {
    
 this.cargarSobreMi();
+if (sessionStorage.getItem('currentUser') == "null"){
+  this.modoEdit = false;
+}else if (sessionStorage.getItem('currentUser') == null){
+  this.modoEdit = false;
+}else {
+  this.modoEdit = true;
+}
+
 
   }
   cargarSobreMi():void{

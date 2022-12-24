@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
+import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 
 @Component({
   selector: 'app-laboral',
@@ -9,11 +10,21 @@ import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
 })
 export class LaboralComponent implements OnInit {
   experiencia: Experiencia[]=[];    //se llama al modelo que es un array
-  
-  constructor(private experienciaService: ExperienciaService) { }
+  modoEdit: any;
+
+  constructor(private experienciaService: ExperienciaService, private autService: AutenticacionService) { }
 
   ngOnInit(): void {
     this.cargarExperiencia();
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
+
+
   }
 
   cargarExperiencia(): void{

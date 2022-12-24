@@ -7,15 +7,18 @@
         <li *ngFor="let estudios of estudios">
           <p><b>{{estudios.titulo}} </b>  - {{estudios.institucion}} - {{estudios.fin}}</p>
 
+          <div *ngIf="modoEdit">
           <div class="btn delete" type="button"><i class="fa-solid fa-trash" (click)="delete(estudios.id)"></i></div>
+        </div>
         </li>
         
       </ul>
       <!-- boton Modal --> 
+      <div *ngIf="modoEdit">
     <div class="btn lapiz" id="lapizTitulo" type="button" data-bs-toggle="modal" data-bs-target="#agregarEstudios" >
       <i class="fa-solid fa-plus"></i>
     </div>
-    
+  </div>
     </article>
   </div>
 <!--No agrego boton editar porque no lo veo necesario para esta seccion
