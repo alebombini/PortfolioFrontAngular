@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { persona } from 'src/app/model/persona';
 
 @Component({
   selector: 'app-login',
@@ -11,36 +13,39 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
-  email: String = "";
-  password : String = "";
+  persona: persona = new persona("", "", "", "", "", "", "", "", "", "");
+  /*email: String = "";
+  password : String = "";*/
 
   
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder, private autService: AutenticacionService) {
+  constructor(private ruta: Router, private formBuilder: FormBuilder, private autService: AutenticacionService) {
     this.form=this.formBuilder.group(
       {
         email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(4)]],
-        deviceId:[""],
-        deviceType:[""],
-        notificationToken:[""]
+        clave:['',[Validators.required,Validators.minLength(4)]],
       })
    }
 
   ngOnInit(): void {
   }
 
-login(){
-  
-}
 
 get Email(){
    return this.form.get('email');
   }
 
-get Password(){
-  return this.form.get('password');
+get Clave(){
+  return this.form.get('clave');
 }
-
+onEnviar(event: Event){
+  event.preventDefault;
+  this.autService.loginPersona(this.form.value).subscribe(data =>
+    {
+      console.log("DATA: " + JSON.stringify(data));
+    })
+    //this.ruta.navigate([''])
+    window.location.reload();
+}
 
 }

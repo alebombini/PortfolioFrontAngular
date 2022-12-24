@@ -13,7 +13,7 @@ export class EditarSobreMiComponent implements OnInit {
   form: FormGroup;
   sobreMi: SobreMi = null;
   personaId: number = 1;
-  id: number = 8;
+  id: number = 1;
   //presentacion: string= "";
   //urlVideo: String ="";
   

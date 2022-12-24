@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyectos } from 'src/app/model/proyectos';
+import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 import { ProyectosService } from 'src/app/Servicios/proyectos.service';
 
 @Component({
@@ -9,11 +10,19 @@ import { ProyectosService } from 'src/app/Servicios/proyectos.service';
 })
 export class ProyectosComponent implements OnInit {
  proyectos: Proyectos[]=[];
+ modoEdit: any;
 
-  constructor(private proyectosService: ProyectosService) { }
+  constructor(private proyectosService: ProyectosService, private autService: AutenticacionService) { }
 
   ngOnInit(): void {
    this.cargarProyectos();
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
   }
 
   cargarProyectos():void{

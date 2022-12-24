@@ -13,7 +13,7 @@ import { SkillsComponent } from './Componentes/skills/skills.component';
 import { ProyectosComponent } from './Componentes/proyectos/proyectos.component';
 import { FooterComponent } from './Componentes/footer/footer.component';
 import { PortofolioService } from './Servicios/portofolio.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './Componentes/banner/editar/editar.component';
 import { ModalSkillsComponent } from './Componentes/skills/modal-skills/modal-skills.component';
@@ -23,6 +23,8 @@ import { ModalExperienciaComponent } from './Componentes/laboral/modal-experienc
 import { ModalProyectosComponent } from './Componentes/proyectos/modal-proyectos/modal-proyectos.component';
 import { EditarSobreMiComponent } from './Componentes/personal/editar-sobre-mi/editar-sobre-mi.component';
 import { InicioComponent } from './Componentes/inicio/inicio.component';
+import { PersonaService } from './Servicios/persona.service';
+import { InterceptorService } from './Servicios/interceptor.service';
 
 @NgModule({
     declarations: [
@@ -46,7 +48,7 @@ import { InicioComponent } from './Componentes/inicio/inicio.component';
         EditarSobreMiComponent,
         InicioComponent,
     ],
-    providers: [],
+    providers: [PersonaService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
     bootstrap: [AppComponent],
     imports: [
         BrowserModule,

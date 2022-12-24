@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skills } from 'src/app/model/skills';
+import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
 import { SkillsService } from 'src/app/Servicios/skills.service';
 
 @Component({
@@ -10,12 +11,19 @@ import { SkillsService } from 'src/app/Servicios/skills.service';
 export class SkillsComponent implements OnInit {
   
   skills: Skills[]=[];    //se llama al modelo que es un array
+  modoEdit: any;
 
-  constructor(private servSkills: SkillsService) { }
+  constructor(private servSkills: SkillsService, private autService: AutenticacionService) { }
 
   ngOnInit(): void {
     this.cargarSkills();
-   
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
   }
 
   cargarSkills():void{
@@ -29,7 +37,7 @@ delete(id:number){
     this.servSkills.delete(id).subscribe(
      _data=>  {
       }, ()  =>{
-        alert("Elemento agregado")
+        alert("Elemento eliminado")
         this.cargarSkills(); 
       }
     )
