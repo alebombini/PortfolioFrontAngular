@@ -12,8 +12,8 @@ import { SobreMiService } from 'src/app/Servicios/sobre-mi.service';
 export class EditarSobreMiComponent implements OnInit {
   form: FormGroup;
   sobreMi: SobreMi = null;
-  personaId: number = 1;
-  id: number = 1;
+  personaId: number = 1;          //le pongo id fijo porque solo tendre 1 persona
+  id: number = 1;                //le pongo id fijo porque solo tendre 1 info personal
   //presentacion: string= "";
   //urlVideo: String ="";
   
@@ -38,7 +38,7 @@ get UrlVideo(){
   ngOnInit(): void {
     this.cargarInfo(); 
     const id = this.activatedRoute.snapshot.params['id'];
-    this.servSobreMi.getById(id).subscribe(
+    this.servSobreMi.getById(this.id).subscribe(
       data => {
         this.sobreMi = data;
       }, () =>{
@@ -53,7 +53,7 @@ get UrlVideo(){
     this.servSobreMi.editSobreMi(this.id, this.sobreMi).subscribe(
       data => {
         alert("la informacion fue modificada");
-        this.router.navigate(['']);
+        window.location.reload();
       }, err =>{
         alert("error");
         this.router.navigate(['']);
@@ -64,8 +64,11 @@ get UrlVideo(){
   }
 //metodo para traer la info de la ddbb
   cargarInfo(){
-    this.servSobreMi.getById(1).subscribe(data => {   //le pongo id fijo porque solo tendre 1 info personal
+    this.servSobreMi.getById(this.id).subscribe(data => {   
       this.sobreMi = data;
     });
   }
+ 
+
+
 }
