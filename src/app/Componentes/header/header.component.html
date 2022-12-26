@@ -7,12 +7,15 @@
      
    <!--botones de login-->
     <div class="loginbt">
-        <button type="button" id="login" data-bs-toggle="modal" data-bs-target="#loginModal">
+     
+        <button  *ngIf="!modoEdit" type="button" id="login" data-bs-toggle="modal" data-bs-target="#loginModal">
           <span style="background-color:whitesmoke;">
             <i class="fa-solid fa-user-lock fa-sm"></i>
           </span>
         </button>
-        <button type="button" class="btn btn-light fa-sm" id="outbt">Cerrar</button>
+      
+     
+        <button *ngIf="modoEdit" type="button" class="btn btn-light fa-sm" id="outbt" (click)="cerrarSesion()">Cerrar</button>
        
 </div>
 </div>  
