@@ -23,7 +23,7 @@ loginPersona(credenciales:any):Observable<any>{
   return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data => {
     sessionStorage.setItem('currentUser', JSON.stringify(data));
     this.currentUserSubject.next(data);
-    console.log("aut service esta corriendo "+ JSON.stringify(data));
+    //console.log("aut service esta corriendo "+ JSON.stringify(data));
     return data;
         }));
 }

@@ -10,6 +10,7 @@ import { PortofolioService } from 'src/app/Servicios/portofolio.service';
 })
 export class HeaderComponent implements OnInit {
   persona: persona = new persona("", "", "", "", "", "", "", "", "", "");
+  modoEdit: any;
 
   constructor( private personaService: PersonaService) { }
 
@@ -17,6 +18,26 @@ export class HeaderComponent implements OnInit {
     this.personaService.getPersona().subscribe(data =>{
       this.persona = data
     });
+    if (sessionStorage.getItem('currentUser') == "null"){
+      this.modoEdit = false;
+    }else if (sessionStorage.getItem('currentUser') == null){
+      this.modoEdit = false;
+    }else {
+      this.modoEdit = true;
+    }
+
+
+
   }
+
+cerrarSesion(){
+  sessionStorage.setItem('currentUser', "null");
+  this.modoEdit = false;
+  alert("sesion cerrada");
+  window.location.reload();
+  return this.modoEdit;
+}
+
+
 
 }
