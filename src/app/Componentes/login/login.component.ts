@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AutenticacionService } from 'src/app/Servicios/autenticacion.service';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { persona } from 'src/app/model/persona';
 
@@ -17,8 +15,6 @@ export class LoginComponent implements OnInit {
   /*email: String = "";
   password : String = "";*/
 
-  
-
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService: AutenticacionService) {
     this.form=this.formBuilder.group(
       {
@@ -29,7 +25,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 
 get Email(){
    return this.form.get('email');

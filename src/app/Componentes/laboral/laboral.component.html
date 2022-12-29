@@ -4,16 +4,12 @@
        <h5 class="titulo"> Experiencia Laboral</h5>
        <div>
         
-        <ul>
-          <li *ngFor="let experiencia of experiencia">
+        <ul class="listaexpe">
+          <li class="itemexpe" *ngFor="let experiencia of experiencia">
             <img class="logo" [src]="experiencia.logo">
-          
-           <div *ngIf="experiencia.esTrabajoActual">
-                <p>{{experiencia.inicio}} - <b>ACTUAL</b> </p>
-           </div>
-           <div *ngIf="!experiencia.esTrabajoActual">
-           <p>{{experiencia.inicio}} a {{experiencia.fin}}</p> 
-          </div>
+       
+           <p>{{experiencia.inicio}} hasta {{experiencia.fin}}</p> 
+         
            <h5>{{experiencia.cargo}}  en {{experiencia.empresa}}.</h5>
             
             <ul>

@@ -17,6 +17,16 @@
               Campo requerido
             </p>
           </div>
+          <br>
+          <br>
+          <input  class="form-control form-control-sm" type="text" placeholder="Descripcion proyecto" aria-label=".form-control-sm example" 
+          formControlName="descripcionP" [(ngModel)]="descripcionP" 
+          [ngClass]="{'is-invalid': DescripcionP.errors && DescripcionP.touched, 'is-valid': !DescripcionP.errors && DescripcionP.touched}">
+          <div *ngIf="DescripcionP.errors && DescripcionP.touched">
+            <p *ngIf="DescripcionP.hasError('required')" class="text-danger">
+              Campo requerido
+            </p>
+          </div>
          <br>
          <br>
           <input class="form-control form-control-sm" type="text" placeholder="Proyecto -URL" aria-label=".form-control-sm example" 

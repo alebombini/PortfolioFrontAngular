@@ -18,3 +18,16 @@ ul {
     margin: auto;
 
 }
+#lista-skills {
+    font-weight: bolder;
+    line-height: 2.5;
+    
+    
+    }
+    
+    .flex-item-barras{
+    width: 300px;
+    margin-left: 2px;
+    margin-top: 7px;
+    height: 300px;
+    }
