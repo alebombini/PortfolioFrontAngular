@@ -2,7 +2,7 @@
 <div class="modal fade" id="editBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
-      <form [formGroup]="form"  (ngSubmit)="onCreate()" novalidate #f="ngForm">
+      <form [formGroup]="form"  (ngSubmit)="onUpdate()" novalidate #f="ngForm">
 
       <div class="modal-content">
         <div class="modal-header">
@@ -15,7 +15,7 @@
           <p>Titulo</p>
           <input class="form-control form-control-sm" formControlName="titulo" type="text" 
           placeholder="Introduzca el titulo" aria-label=".form-control-sm example"  
-          [(ngModel)]="titulo"
+          [(ngModel)]="persona.titulo"
             [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}">
             <div *ngIf="Titulo.errors && Titulo.touched" >
               <p *ngIf="Titulo.hasError('required')" class="text-danger">

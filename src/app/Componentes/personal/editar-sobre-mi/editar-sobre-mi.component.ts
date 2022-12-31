@@ -14,8 +14,7 @@ export class EditarSobreMiComponent implements OnInit {
   sobreMi: SobreMi = null;
   personaId: number = 1;          //le pongo id fijo porque solo tendre 1 persona
   id: number = 1;                //le pongo id fijo porque solo tendre 1 info personal
-  //presentacion: string= "";
-  //urlVideo: String ="";
+
   
 
 
@@ -46,7 +45,6 @@ get UrlVideo(){
       }
     )
   }
-  
 
   onUpdate(): void{
     const id = this.activatedRoute.snapshot.params['id']; 
@@ -56,7 +54,7 @@ get UrlVideo(){
         window.location.reload();
       }, err =>{
         alert("error");
-        this.router.navigate(['']);
+        window.location.reload();
       }
     )
    
