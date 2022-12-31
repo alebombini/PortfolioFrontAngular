@@ -35,7 +35,7 @@
           </div>
           <div class="mb-3">
             <label for="titulo" class="form-label">Introducir fecha de inicio</label>
-            <input type="date" formControlName="inicio" class="form-control" id="inicio" rows="3" [(ngModel)]="inicio"
+            <input type="text" formControlName="inicio" class="form-control" id="inicio" rows="3" [(ngModel)]="inicio"
             [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
             <div *ngIf="Inicio.errors && Inicio.touched" >
               <p *ngIf="Inicio.hasError('required')" class="text-danger">
@@ -46,12 +46,12 @@
           </div>
           <div class="mb-3">
             <label for="titulo" class="form-label">Introducir fecha de finalizacion</label>
-            <input type="date" formControlName="fin" class="form-control" id="fin" rows="3" [(ngModel)]="fin" required>
+            <input type="string" formControlName="fin" class="form-control" id="fin" rows="3" [(ngModel)]="fin" required>
           </div>
           
         </div>
         <div class="modal-footer">
-          <button type="button" (click)="limpiar()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
         

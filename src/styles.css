@@ -50,21 +50,6 @@ body {
   font-weight: bold;
   }
   
-  .d-flex.flex-row.mb-3 img {   /*fotolinks a secciones*/
-  width: auto;
-  height: 150px;
-  object-fit: cover;
-  margin: 15px 8px 8px 8px;
-  padding: 4px;
-  border-radius: 10%;
-  
-  }
-  
-  .figure-caption{               /*texto de las fotos links*/
-  color: white;
-  font-weight: bold;
-  }
-  
   article {
   border: solid white;
   margin: 0 10% 0 10%;
@@ -79,19 +64,7 @@ body {
   justify-content: left;
   
   }
-  #lista-skills {
-  font-weight: bolder;
-  line-height: 2.5;
   
-  
-  }
-  
-  .flex-item-barras{
-  width: 300px;
-  margin-left: 2px;
-  margin-top: 7px;
-  height: 300px;
-  }
   
   #footer{
   text-align: end;  

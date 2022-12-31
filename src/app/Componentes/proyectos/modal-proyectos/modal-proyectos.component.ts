@@ -12,12 +12,14 @@ export class ModalProyectosComponent implements OnInit {
   form: FormGroup;
   personaId: number = 2;
   nombreP: String ="";
+  descripcionP: String ="";
   urlProyecto: String ="";
   urlFotoProyecto: String ="";
 
   constructor(private formBuilder: FormBuilder, private proyeService: ProyectosService) { 
     this.form= this.formBuilder.group({
       nombreP: ['',[Validators.required, Validators.minLength(2) ]],
+      descripcionP: ['',[Validators.required, Validators.minLength(8) ]],
       urlProyecto:['',[Validators.required, Validators.minLength(2)]],
       urlFotoProyecto: ['',[Validators.required, Validators.minLength(2) ]]
       
@@ -32,6 +34,10 @@ export class ModalProyectosComponent implements OnInit {
  get NombreP(){
   return this.form.get("nombreP");
 }
+get DescripcionP(){
+  return this.form.get("descripcionP");
+}
+
 get UrlProyecto(){
   return this.form.get("urlProyecto");
 }
@@ -42,6 +48,10 @@ get UrlFotoProyecto(){
 get NombrePValid(){
   return this.NombreP.touched && !this.NombreP.valid;
 }
+get DescripcionPValid(){
+  return this.DescripcionP.touched && !this.DescripcionP.valid;
+}
+
 get UrlProyectoValid(){
   return this.UrlProyecto.touched && !this.UrlProyecto.valid;
 }
@@ -51,7 +61,7 @@ get UrlFotoProyectoValid(){
 
 
 onCreate():void{
-  const proye = new Proyectos(this.nombreP, this.urlProyecto, this.urlFotoProyecto);
+  const proye = new Proyectos(this.nombreP, this.descripcionP, this.urlProyecto, this.urlFotoProyecto);
   this.proyeService.saveProyecto(proye).subscribe(data=>{
     alert("Elemento agregado");
     window.location.reload();

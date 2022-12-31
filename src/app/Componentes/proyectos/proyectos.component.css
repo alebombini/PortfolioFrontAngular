@@ -1,15 +1,52 @@
 .figure-caption{
-    color: antiquewhite;
+    color:  whitesmoke;
     text-align: center;
+    justify-content:center;
+    font-weight: bold;
 }
-.linkFrecodecamp{
-    text-decoration: none;
+.link{
+    text-decoration:none;
 }
 .link-proyectos:hover {
     border: solid white; 
     
-  }
+}
 
 .fa-solid.fa-trash{
     color: aliceblue;
+    border-radius: 10%;
 }
+#proye {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 2% 2% 2%;
+    margin: auto;
+    background-color:gray;
+    width: 90%;
+    border-radius: 10px;
+    }
+.d-flex.flex-row.mb-1 img {   /*fotolinks a proyectos*/
+        width: auto;
+        height: 150px;
+        object-fit: cover;
+        margin-left: 20%;
+        margin-top: 5%;
+        padding: 5px;
+        border-radius: 10%;
+    
+        }
+
+
+.flex-item{
+    justify-content:center;
+    width: 90%;
+    
+}
+.descripcion{
+    color: whitesmoke;
+    text-align: center;
+
+}
+

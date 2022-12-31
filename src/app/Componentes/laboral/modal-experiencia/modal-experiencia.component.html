@@ -12,7 +12,7 @@
 <!--Input fecha inicio (obligatorio)-->  
               <label for="inicio">Inicio:</label>
               <br>
-              <input type="date" class="form-control form-control-sm"  id="inicio" name="inicio" formControlName="inicio" [(ngModel)]="inicio" 
+              <input type="text" class="form-control form-control-sm"  id="inicio" name="inicio" formControlName="inicio" [(ngModel)]="inicio" 
           [ngClass]="{'is-invalid': Inicio.errors && Inicio.touched, 'is-valid': !Inicio.errors && Inicio.touched}">
           <div *ngIf="Inicio.errors && Inicio.touched">
             <p *ngIf="Inicio.hasError('required')" class="text-danger">
@@ -24,7 +24,7 @@
  <!--Input fecha fin (opcional)-->
               <label for="fin">Fin:</label>
               <br>
-              <input type="date" class="form-control form-control-sm" id="fin" name="fin" formControlName="fin" [(ngModel)]="fin" 
+              <input type="text" class="form-control form-control-sm" id="fin" name="fin" formControlName="fin" [(ngModel)]="fin" 
           [ngClass]="{'is-invalid': Fin.errors && Fin.touched, 'is-valid': !Fin.errors && Fin.touched}">
           <div *ngIf="Fin.errors && Fin.touched">
             <p *ngIf="Fin.hasError('required')" class="text-danger">

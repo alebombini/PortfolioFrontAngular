@@ -1,7 +1,7 @@
 a {
     text-decoration: none;
 }
-.figure-caption {
+.figure-caption {                 /*texto de las fotos links*/
     color: antiquewhite;
     text-align: center;
 
@@ -10,3 +10,15 @@ a {
     border: solid white; 
     
   }
+  
+  .d-flex.flex-row.mb-3 img {   /*fotolinks a secciones*/
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+    margin: 15px 8px 8px 15px;
+    padding: 4px;
+    border-radius: 10%;
+    
+    }
+    
+   

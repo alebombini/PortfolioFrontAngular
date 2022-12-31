@@ -24,7 +24,7 @@ constructor(private formBuilder: FormBuilder, private expeService: ExperienciaSe
 //creo el grupo de controles para el formulario
   this.form= this.formBuilder.group({
     inicio:['',[Validators.required]],
-    fin:['', [Validators.minLength(8)]],
+    fin:['', [Validators.minLength(3)]],
     empresa: ['',[Validators.required, Validators.minLength(2) ]],
     logo:['',[Validators.required]],
     cargo: ['',[Validators.required, Validators.minLength(2) ]],
@@ -82,7 +82,6 @@ get FinValid(){
 onCreate():void{
   const expe = new Experiencia(this.empresa, this.logo, this.cargo, this.descripcion, 
     this.inicio, this.fin);
-    this.esActual();
     this.expeService.save(expe).subscribe(
       data=>{  
     }, () =>{
@@ -97,12 +96,6 @@ limpiar():void{
   this.form.reset();
 }
 
-esActual():void{
-  if(this.fin == null){
-    this.esTrabajoActual = true;
-  }else{
-    this.esTrabajoActual = false;
-  }
-}
+
 
 }
