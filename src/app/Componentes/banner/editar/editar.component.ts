@@ -13,8 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditarComponent implements OnInit {
   persona: persona= null;
   form: FormGroup;
-  titulo:String ='';
-  id: number = 2;
+  id: number = 1; // inicializo en 1 porque solo tendre 1 persona
 
   constructor(private formBuilder: FormBuilder, private servPersona: PersonaService, 
     private activatedRoute: ActivatedRoute, private router: Router) {
@@ -26,29 +25,39 @@ export class EditarComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.cargarInfo(); 
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.servPersona.getPersona().subscribe(
+      data => {
+        this.persona = data;
+      }, () =>{
+        
+      }
+    )
   }
 
   get Titulo(){
     return this.form.get("titulo");
   }
 
-onCreate(): void {
-    
-    
-  }
   onUpdate(): void{
     const id = this.activatedRoute.snapshot.params['id']; 
     this.servPersona.edit(this.id, this.persona).subscribe(
       data => {
         alert("la informacion fue modificada");
-        this.router.navigate(['']);
+        window.location.reload();
       }, err =>{
         alert("error");
-        this.router.navigate(['']);
+       
       }
     )
   }
   
-
+//metodo para traer la info de la ddbb
+cargarInfo(){
+  this.servPersona.getPersona().subscribe(data => {   
+    this.persona = data;
+  });
+}
 
 }
