@@ -7,7 +7,7 @@ import { fotolinks } from '../model/fotolinks';
   providedIn: 'root'
 })
 export class FotolinksService {
-  URL = 'http://localhost:8080/fotoLinks/';
+  URL = 'https://portfolio-pi5g.onrender.com/fotoLinks/';
   constructor(private http: HttpClient) { }
 
   public list():Observable<fotolinks[]>{

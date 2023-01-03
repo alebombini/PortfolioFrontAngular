@@ -7,7 +7,7 @@ import { Skills } from '../model/skills';
   providedIn: 'root'
 })
 export class SkillsService {
-  url='http://localhost:8080/skills/';
+  url='https://portfolio-pi5g.onrender.com/skills/';
   
   constructor(private httpClient:HttpClient) { }
 

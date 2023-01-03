@@ -7,7 +7,7 @@ import { SobreMi } from '../model/sobre-mi';
   providedIn: 'root'
 })
 export class SobreMiService {
-  url='http://localhost:8080/sobremi/';
+  url='https://portfolio-pi5g.onrender.com/sobremi/';
 
   constructor(private http:HttpClient) { }
   public getSobreMi():Observable<SobreMi[]>{

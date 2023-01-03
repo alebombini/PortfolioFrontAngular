@@ -7,7 +7,7 @@ import { Estudios } from '../model/estudios';
   providedIn: 'root'
 })
 export class EstudiosService {
-url='http://localhost:8080/estudios/';
+url='https://portfolio-pi5g.onrender.com/estudios/';
 
 
   constructor(private http:HttpClient) { }

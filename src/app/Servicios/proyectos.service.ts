@@ -7,7 +7,7 @@ import { Proyectos } from '../model/proyectos';
   providedIn: 'root'
 })
 export class ProyectosService {
-  url='http://localhost:8080/proyectos/';
+  url='https://portfolio-pi5g.onrender.com/proyectos/';
 
 
   constructor(private http:HttpClient) { }
