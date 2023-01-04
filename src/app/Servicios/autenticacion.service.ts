@@ -6,7 +6,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="https://portfolio-pi5g.onrender.com/autenticacion/login";
+  url='https://portfolio-pi5g.onrender.com/autenticacion/login';
   currentUserSubject:BehaviorSubject<any>;
   sessionStorage: any;
 
@@ -15,6 +15,7 @@ export class AutenticacionService {
     
   }
 loginPersona(credenciales:any):Observable<any>{ 
+  console.log(credenciales);
   var httpOptions = {                
     headers: new HttpHeaders({
     'Content-Type' : 'application/json'
@@ -23,7 +24,7 @@ loginPersona(credenciales:any):Observable<any>{
   return this.http.post<any>(this.url, credenciales, httpOptions).pipe(map(data => {
     sessionStorage.setItem('currentUser', JSON.stringify(data));
     this.currentUserSubject.next(data);
-    //console.log("aut service esta corriendo "+ JSON.stringify(data));
+    console.log("aut service esta corriendo "+ JSON.stringify(data));
     return data;
         }));
 }

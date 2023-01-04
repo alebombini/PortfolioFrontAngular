@@ -12,8 +12,6 @@ import { persona } from 'src/app/model/persona';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   persona: persona = new persona("", "", "", "", "", "", "", "", "", "");
-  /*email: String = "";
-  password : String = "";*/
 
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService: AutenticacionService) {
     this.form=this.formBuilder.group(
@@ -35,12 +33,19 @@ get Clave(){
 }
 onEnviar(event: Event){
   event.preventDefault;
-  this.autService.loginPersona(this.form.value).subscribe(data =>
+  if (this.form.valid){
+  this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>
     {
       console.log("DATA: " + JSON.stringify(data));
+      window.location.reload();  //this.ruta.navigate(['/dashboard'])
+    }, error =>{
+      alert("error al iniciar sesion");
     })
-    //this.ruta.navigate([''])
-    window.location.reload();
+  }  else {
+    alert("Hay un error en el formulario")
+  }
+    
+    
 }
 
 
