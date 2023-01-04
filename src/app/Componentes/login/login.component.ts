@@ -33,19 +33,13 @@ get Clave(){
 }
 onEnviar(event: Event){
   event.preventDefault;
-  if (this.form.valid){
   this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data =>
     {
       console.log("DATA: " + JSON.stringify(data));
-      window.location.reload();  //this.ruta.navigate(['/dashboard'])
-    }, error =>{
-      alert("error al iniciar sesion");
+      
     })
-  }  else {
-    alert("Hay un error en el formulario")
-  }
-    
-    
+    //this.ruta.navigate([''])
+    window.location.reload();
 }
 
 
