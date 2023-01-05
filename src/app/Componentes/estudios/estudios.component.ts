@@ -17,9 +17,9 @@ export class EstudiosComponent implements OnInit {
   ngOnInit(): void {
     this.cargarEstudios();
     if (sessionStorage.getItem('currentUser') == "null"){
-      this.modoEdit = true;
+      this.modoEdit = false;
     }else if (sessionStorage.getItem('currentUser') == null){
-      this.modoEdit = true;
+      this.modoEdit = false;
     }else {
       this.modoEdit = true;
     }

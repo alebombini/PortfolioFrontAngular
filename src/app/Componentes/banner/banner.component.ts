@@ -20,9 +20,9 @@ export class BannerComponent implements OnInit {
     this.personaService.getPersona().subscribe(data => {this.persona = data;});
     
     if (sessionStorage.getItem('currentUser') == "null"){
-      this.modoEdit = true;
+      this.modoEdit = false;
     }else if (sessionStorage.getItem('currentUser') == null){
-      this.modoEdit = true;
+      this.modoEdit = false;
     }else {
       this.modoEdit = true;
     }
