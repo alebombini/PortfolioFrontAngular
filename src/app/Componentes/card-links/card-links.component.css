@@ -20,5 +20,17 @@ a {
     border-radius: 10%;
     
     }
-    
+    #card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border: solid white;
+        padding: 2% 2% 2% 2%;
+        margin: auto;
+        background-color:gray;
+        width: 90%;
+        border-radius: 10px;
+        } 
    

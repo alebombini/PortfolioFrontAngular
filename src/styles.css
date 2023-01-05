@@ -16,19 +16,7 @@ body {
     margin-right: auto;
     background-color:rgba(235, 237, 243, 0.95);
   }
-  #card {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border: solid white;
-  padding: 2% 2% 2% 2%;
-  margin: auto;
-  background-color:gray;
-  width: 90%;
-  border-radius: 10px;
-  }
+  
   
   
   h1 {
@@ -38,13 +26,6 @@ body {
   background-color: black;
   padding: 10px;
   }
-  
-  .titulo {
-  padding: 10px;
-  background-color:rgba(12, 12, 12, 0.1);
-  font-family: Impact, serif;
-  text-align: center;
-  }  
   
   h6 {
   font-weight: bold;
@@ -66,25 +47,7 @@ body {
   }
   
   
-  #footer{
-  text-align: end;  
-  }
-  
-  .subir {
-  color:whitesmoke;
-  background-color:  rgba(95, 110, 157, 0.993);
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid;
-  border-radius: 6px;
-  
-  }
-  .subir:hover{
-  color: rgba(95, 110, 157, 0.993);
-  background-color: whitesmoke;
-  }
-  
-  @media (max-width: 800px) {
+ /* @media (max-width: 800px) {
   #card img {
     width: 100%;
   }
@@ -93,7 +56,8 @@ body {
   #card img {
     width: 100%;
   }
-  }
+  }*/
+
 /*
   @media (min-width: 320px) and (max-width: 480px){
     body {

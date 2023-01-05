@@ -5,3 +5,21 @@ a {
 .footer-text{
   margin-right: 10%;
 }
+#footer{
+  text-align: end;  
+  }
+  
+  .subir {
+  color:whitesmoke;
+  background-color:  rgba(95, 110, 157, 0.993);
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid;
+  border-radius: 6px;
+  
+  }
+  .subir:hover{
+  color: rgba(95, 110, 157, 0.993);
+  background-color: whitesmoke;
+  }
+  

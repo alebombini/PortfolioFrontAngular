@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { persona } from 'src/app/model/persona';
 import { PersonaService } from 'src/app/Servicios/persona.service';
-import { PortofolioService } from 'src/app/Servicios/portofolio.service';
 
 @Component({
   selector: 'app-header',
